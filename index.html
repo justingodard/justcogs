@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Justcogs</title>
+</head>
+<body>
+    <div id="search-container" style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+        <input type="text" id="search-input" placeholder="Search..." />
+        <span id="clear-link" style="color: #06c; text-decoration: underline; cursor: pointer; display: none;">Clear</span>
+    </div>
+    <div id="collection"></div>
+
+    <script>
+        // Store all releases globally
+        let allReleases = [];
+        let totalItems = 0;
+        let searchQuery = '';
+        // Cache for ratings to avoid refetching
+        let ratingsCache = {};
+
+        function escapeHtml(s) {
+            const t = String(s);
+            return t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        function getReleaseGenres(release) {
+            const basicInfo = release.basic_information || {};
+            const genres = (basicInfo.genres || []).map((g) => (g || '').trim()).filter(Boolean);
+            const styles = (basicInfo.styles || []).map((s) => (s || '').trim()).filter(Boolean);
+            return [...new Set([...genres, ...styles])];
+        }
+
+        function releaseMatchesSearch(release, q) {
+            const basicInfo = release.basic_information || {};
+            const artist = (basicInfo.artists?.[0]?.name || '').toLowerCase();
+            const title = (basicInfo.title || '').toLowerCase();
+            const genres = getReleaseGenres(release).map((g) => g.toLowerCase());
+            return artist.includes(q) || title.includes(q) || genres.some((g) => g.includes(q));
+        }
+
+        async function applySearchFilter() {
+            const q = searchQuery.trim().toLowerCase();
+            const filtered = q === '' ? allReleases : allReleases.filter((r) => releaseMatchesSearch(r, q));
+            await displayReleases(filtered, filtered.length);
+        }
+
+        async function fetchJson(url, label) {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`${label} request failed (${response.status}).`);
+            }
+
+            const text = await response.text();
+            if (!text || text.trim() === '') {
+                throw new Error(`${label} response was empty.`);
+            }
+
+            try {
+                return JSON.parse(text);
+            } catch (parseError) {
+                throw new Error(`${label} returned invalid JSON.`);
+            }
+        }
+
+        async function fetchRating(releaseId) {
+            // Check cache first
+            if (ratingsCache[releaseId] !== undefined) {
+                return ratingsCache[releaseId];
+            }
+
+            try {
+                const response = await fetch(`/api/releases/${releaseId}`);
+                if (!response.ok) {
+                    console.warn(`Failed to fetch release ${releaseId}: ${response.status}`);
+                    ratingsCache[releaseId] = null;
+                    return null;
+                }
+                
+                // Check if response has content
+                const text = await response.text();
+                if (!text || text.trim() === '') {
+                    console.warn(`Empty response for release ${releaseId}`);
+                    ratingsCache[releaseId] = null;
+                    return null;
+                }
+                
+                let releaseData;
+                try {
+                    releaseData = JSON.parse(text);
+                } catch (parseError) {
+                    console.error(`Invalid JSON for release ${releaseId}:`, parseError);
+                    console.error(`Response text:`, text.substring(0, 200));
+                    ratingsCache[releaseId] = null;
+                    return null;
+                }
+                
+                // Try different possible locations for rating
+                const rating = releaseData.community?.rating?.average || 
+                              releaseData.community?.rating?.value ||
+                              releaseData.rating?.average ||
+                              null;
+                
+                // Cache the rating (even if null)
+                ratingsCache[releaseId] = rating;
+                return rating;
+            } catch (error) {
+                console.error(`Error fetching rating for release ${releaseId}:`, error);
+                ratingsCache[releaseId] = null;
+                return null;
+            }
+        }
+
+        async function displayReleases(releases, count) {
+            const collectionDiv = document.getElementById('collection');
+            
+            // Display collection count
+            collectionDiv.innerHTML = `<div style="margin-bottom: 20px; font-weight: bold;">Your Collection: ${count} Albums</div>`;
+
+            // Display releases initially without ratings (for faster initial render)
+            const releasesHTML = releases.map((release, index) => {
+                const basicInfo = release.basic_information || {};
+                const artist = basicInfo.artists?.[0]?.name || '';
+                const title = basicInfo.title || '';
+                const year = basicInfo.year || '';
+                const coverImage = basicInfo.cover_image || basicInfo.thumb || '';
+                const releaseId = basicInfo.id;
+                const discogsUrl = releaseId ? `https://www.discogs.com/release/${releaseId}` : '';
+                const genres = getReleaseGenres(release);
+                const genreLinks = genres.map((g) => `<span class="genre-link" data-genre="${escapeHtml(g)}" style="color: #06c; text-decoration: underline; cursor: pointer;">${escapeHtml(g)}</span>`).join(', ');
+
+                return `
+                    <div id="release-${releaseId}" data-release-id="${releaseId}">
+                        ${coverImage ? `${discogsUrl ? `<a href="${discogsUrl}" target="_blank" rel="noopener noreferrer">` : ''}<img src="${coverImage}" style="width: 150px; height: 150px; object-fit: cover;" />${discogsUrl ? `</a>` : ''}` : ''}
+                        <div>${artist}</div>
+                        <div>${title}</div>
+                        <div>${year}</div>
+                        <div class="rating-${releaseId}">Loading rating...</div>
+                        ${genreLinks ? `<div class="genres">${genreLinks}</div>` : ''}
+                    </div>
+                `;
+            }).join('');
+
+            collectionDiv.innerHTML += releasesHTML;
+
+            // Fetch ratings asynchronously for all releases with rate limiting
+            // Process in batches to avoid overwhelming the API
+            const batchSize = 5;
+            for (let i = 0; i < releases.length; i += batchSize) {
+                const batch = releases.slice(i, i + batchSize);
+                await Promise.all(batch.map(async (release) => {
+                    const basicInfo = release.basic_information || {};
+                    const releaseId = basicInfo.id;
+                    if (releaseId) {
+                        const rating = await fetchRating(releaseId);
+                        const ratingElement = document.querySelector(`.rating-${releaseId}`);
+                        if (ratingElement) {
+                            let ratingDisplay = 'No rating';
+                            if (rating) {
+                                // If it's a whole number, don't show decimal
+                                const rounded = rating.toFixed(1);
+                                const formatted = rounded.endsWith('.0') ? rounded.slice(0, -2) : rounded;
+                                ratingDisplay = `Rating: ${formatted}/5`;
+                            }
+                            ratingElement.textContent = ratingDisplay;
+                        }
+                    }
+                }));
+                // Small delay between batches to respect rate limits
+                if (i + batchSize < releases.length) {
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
+            }
+        }
+
+        async function fetchCollection() {
+            const collectionDiv = document.getElementById('collection');
+            collectionDiv.innerHTML = '<div>Loading your collection...</div>';
+
+            try {
+                const userInfo = await fetchJson('/api/user-info', 'User info');
+                const username = userInfo.username;
+
+                const foldersData = await fetchJson(`/api/users/${username}/collection/folders`, 'Folders');
+                const folders = foldersData.folders || [];
+                const allFolder = folders.find(f => f.id === 0) || folders[0];
+                if (!allFolder) {
+                    throw new Error('No collection folders found.');
+                }
+
+                // Fetch first page to get pagination info
+                const firstPageData = await fetchJson(
+                    `/api/users/${username}/collection/folders/${allFolder.id}/releases?per_page=100&page=1`,
+                    'Collection page 1'
+                );
+                const pagination = firstPageData.pagination || {};
+                const totalPages = pagination.pages || 1;
+                totalItems = pagination.items || 0;
+
+                // Collect all releases from first page
+                allReleases = firstPageData.releases || [];
+
+                // Fetch remaining pages
+                for (let page = 2; page <= totalPages; page++) {
+                    const pageData = await fetchJson(
+                        `/api/users/${username}/collection/folders/${allFolder.id}/releases?per_page=100&page=${page}`,
+                        `Collection page ${page}`
+                    );
+                    allReleases = allReleases.concat(pageData.releases || []);
+                }
+
+                await applySearchFilter();
+
+            } catch (error) {
+                collectionDiv.innerHTML = `<div style="color: red;">Error: ${error.message}</div>`;
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-input');
+            const clearLink = document.getElementById('clear-link');
+            const collectionDiv = document.getElementById('collection');
+            function updateClearVisibility() {
+                clearLink.style.display = searchInput.value.trim() ? 'inline' : 'none';
+            }
+            searchInput.addEventListener('input', () => {
+                searchQuery = searchInput.value;
+                updateClearVisibility();
+                applySearchFilter();
+            });
+            clearLink.addEventListener('click', () => {
+                searchInput.value = '';
+                searchQuery = '';
+                updateClearVisibility();
+                applySearchFilter();
+            });
+            collectionDiv.addEventListener('click', (e) => {
+                const link = e.target.closest('.genre-link');
+                if (!link) return;
+                const genre = link.getAttribute('data-genre');
+                if (genre != null) {
+                    searchInput.value = genre;
+                    searchQuery = genre;
+                    updateClearVisibility();
+                    applySearchFilter();
+                }
+            });
+            fetchCollection();
+        });
+    </script>
+</body>
+</html>

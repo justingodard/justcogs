@@ -1,0 +1,13 @@
+{
+  "name": "justcogs",
+  "version": "1.0.0",
+  "description": "Discogs, but for Justin",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["discogs", "vinyl", "collection"],
+  "author": "",
+  "license": "ISC"
+}

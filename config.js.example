@@ -1,0 +1,9 @@
+// Configuration file - copy this to config.js and fill in your credentials
+// This file is gitignored for security
+
+module.exports = {
+    discogs: {
+        username: 'YOUR_DISCOGS_USERNAME',  // Replace with your Discogs username
+        token: 'YOUR_DISCOGS_API_TOKEN'     // Replace with your API token
+    }
+};
