@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Justcogs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,6 +50,10 @@
         .release-card .genres {
             font-size: 0.8em;
             margin-top: 4px;
+        }
+        .release-card [class^="rating-"] {
+            color: #666;
+            font-size: 0.85em;
         }
         #search-container {
             position: relative;
@@ -100,7 +105,7 @@
                 font-size: 0.76em;
             }
         }
-        @media (max-width: 900px) {
+        @media (max-width: 767px) {
             body {
                 margin: 16px;
             }
@@ -336,7 +341,7 @@
         async function fetchCollection() {
             const collectionDiv = document.getElementById('collection');
             let statusMessage = 'Loading your collection...';
-            collectionDiv.innerHTML = `<div>${statusMessage}</div>`;
+            collectionDiv.innerHTML = `<div style="margin-bottom: 20px; font-size: 0.9em; color: #666;">${statusMessage}</div>`;
 
             function updateStatus(message) {
                 statusMessage = message;
