@@ -1,6 +1,5 @@
 // scripts/fetchDiscogs.js
 const fs = require('fs');
-const fetch = require('node-fetch');
 
 const DISCOGS_TOKEN = process.env.DISCOGS_TOKEN; // set in GitHub secrets
 const USERNAME = process.env.DISCOGS_USERNAME || 'justingodard'; // from GitHub secrets or default
