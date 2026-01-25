@@ -95,6 +95,32 @@ const server = http.createServer((req, res) => {
         return;
     }
 
+    // Serve cached data files
+    if (parsedUrl.pathname.startsWith('/data/')) {
+        const filePath = path.join(__dirname, parsedUrl.pathname);
+        // Security: ensure the path is within the data directory
+        const dataDir = path.join(__dirname, 'data');
+        if (!filePath.startsWith(dataDir)) {
+            res.writeHead(403);
+            res.end('Forbidden');
+            return;
+        }
+        
+        fs.readFile(filePath, (err, data) => {
+            if (err) {
+                res.writeHead(404);
+                res.end('Not found');
+                return;
+            }
+            res.writeHead(200, { 
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            });
+            res.end(data);
+        });
+        return;
+    }
+
     // 404 for other routes
     res.writeHead(404);
     res.end('Not found');

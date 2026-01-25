@@ -3,6 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Justcogs</title>
+    <style>
+        #releases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .release-card {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .release-card img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .release-card > div {
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        .release-card .artist {
+            font-weight: bold;
+        }
+        .release-card .title {
+            color: #333;
+        }
+        .release-card .year {
+            color: #666;
+            font-size: 0.85em;
+        }
+        .release-card .genres {
+            font-size: 0.8em;
+            margin-top: 4px;
+        }
+    </style>
 </head>
 <body>
     <div id="search-container" style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
@@ -12,17 +50,18 @@
     <div id="collection"></div>
 
     <script>
-        // Discogs credentials (exposed for GitHub Pages static hosting)
-        const DISCOGS = {
-            username: 'justingodard',
-            token: 'QGVdnZJMyYIMSYAPethpfqJuwgEgbkLOEJMdgTZo'
-        };
-        const DISCOGS_API = 'https://api.discogs.com';
+        // Detect if running on localhost
+        const IS_LOCALHOST = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        
+        // On GitHub Pages: use cached data only (no API calls, no credentials)
+        // On localhost: use server proxy (credentials in server-side config.js)
+        const API_BASE = IS_LOCALHOST ? '/api' : null; // null means don't make API calls
 
         // Store all releases globally
         let allReleases = [];
         let totalItems = 0;
         let searchQuery = '';
+        let lastUpdated = null; // Store last update timestamp
         // Cache for ratings to avoid refetching
         let ratingsCache = {};
 
@@ -52,28 +91,56 @@
             await displayReleases(filtered, filtered.length);
         }
 
-        async function discogsFetch(path, label) {
-            const url = path.startsWith('http') ? path : `${DISCOGS_API}${path}`;
-            const response = await fetch(url, {
-                headers: {
-                    'Authorization': `Discogs token=${DISCOGS.token}`,
-                    'User-Agent': 'Justcogs/1.0'
+        async function discogsFetch(path, label, retries = 3, updateStatus = null) {
+            // Only works on localhost via server proxy (no credentials in frontend)
+            if (!IS_LOCALHOST || !API_BASE) {
+                throw new Error('API calls only available on localhost. Use cached data on GitHub Pages.');
+            }
+            
+            const url = path.startsWith('http') ? path : `${API_BASE}${path}`;
+            const headers = {}; // Server proxy handles authentication
+            
+            for (let attempt = 0; attempt < retries; attempt++) {
+                const response = await fetch(url, { headers });
+                
+                // Handle rate limiting (429) with exponential backoff
+                if (response.status === 429) {
+                    const retryAfter = response.headers.get('Retry-After');
+                    // Use Retry-After header if available, otherwise use longer exponential backoff
+                    // Discogs rate limit resets every minute, so wait at least 60 seconds
+                    const delay = retryAfter ? parseInt(retryAfter) * 1000 : Math.max(60000, Math.pow(2, attempt) * 15000);
+                    
+                    if (attempt < retries - 1) {
+                        const waitSeconds = Math.ceil(delay / 1000);
+                        const message = `${label} rate limited. Waiting ${waitSeconds} seconds before retry... (attempt ${attempt + 1}/${retries})`;
+                        console.warn(message);
+                        if (updateStatus) {
+                            updateStatus(message);
+                        }
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        continue;
+                    } else {
+                        throw new Error(`${label} request failed: Rate limit exceeded. Discogs API allows 60 requests per minute. Please wait 60 seconds and refresh the page.`);
+                    }
                 }
-            });
-            if (!response.ok) {
-                throw new Error(`${label} request failed (${response.status}).`);
-            }
+                
+                if (!response.ok) {
+                    throw new Error(`${label} request failed (${response.status}).`);
+                }
 
-            const text = await response.text();
-            if (!text || text.trim() === '') {
-                throw new Error(`${label} response was empty.`);
-            }
+                const text = await response.text();
+                if (!text || text.trim() === '') {
+                    throw new Error(`${label} response was empty.`);
+                }
 
-            try {
-                return JSON.parse(text);
-            } catch (parseError) {
-                throw new Error(`${label} returned invalid JSON.`);
+                try {
+                    return JSON.parse(text);
+                } catch (parseError) {
+                    throw new Error(`${label} returned invalid JSON.`);
+                }
             }
+            
+            throw new Error(`${label} request failed after ${retries} attempts.`);
         }
 
         async function fetchRating(releaseId) {
@@ -82,13 +149,17 @@
                 return ratingsCache[releaseId];
             }
 
+            // Only fetch ratings on localhost (via server proxy)
+            // On GitHub Pages, skip rating fetches to avoid API calls
+            if (!IS_LOCALHOST || !API_BASE) {
+                ratingsCache[releaseId] = null;
+                return null;
+            }
+
             try {
-                const response = await fetch(`${DISCOGS_API}/releases/${releaseId}`, {
-                    headers: {
-                        'Authorization': `Discogs token=${DISCOGS.token}`,
-                        'User-Agent': 'Justcogs/1.0'
-                    }
-                });
+                const url = `${API_BASE}/releases/${releaseId}`;
+                const headers = {}; // Server proxy handles authentication
+                const response = await fetch(url, { headers });
                 if (!response.ok) {
                     console.warn(`Failed to fetch release ${releaseId}: ${response.status}`);
                     ratingsCache[releaseId] = null;
@@ -129,13 +200,28 @@
             }
         }
 
+        function formatTimestamp(timestamp) {
+            if (!timestamp) return null;
+            const date = new Date(timestamp);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            return `${year}/${month}/${day} ${hours}:${minutes}`;
+        }
+
         async function displayReleases(releases, count) {
             const collectionDiv = document.getElementById('collection');
             
-            // Display collection count
-            collectionDiv.innerHTML = `<div style="margin-bottom: 20px; font-weight: bold;">Your Collection: ${count} Albums</div>`;
-
-            // Display releases initially without ratings (for faster initial render)
+            // Display collection count and last API sync timestamp
+            const timestampText = lastUpdated ? formatTimestamp(lastUpdated) : null;
+            let headerHTML = `<div style="margin-bottom: 20px; font-weight: bold;">Your Collection: ${count} Albums</div>`;
+            if (timestampText) {
+                headerHTML += `<div style="margin-bottom: 20px; font-size: 0.9em; color: #666;">Last API sync: ${timestampText}</div>`;
+            }
+            
+            // Display releases in a grid layout
             const releasesHTML = releases.map((release, index) => {
                 const basicInfo = release.basic_information || {};
                 const artist = basicInfo.artists?.[0]?.name || '';
@@ -148,18 +234,18 @@
                 const genreLinks = genres.map((g) => `<span class="genre-link" data-genre="${escapeHtml(g)}" style="color: #06c; text-decoration: underline; cursor: pointer;">${escapeHtml(g)}</span>`).join(', ');
 
                 return `
-                    <div id="release-${releaseId}" data-release-id="${releaseId}">
-                        ${coverImage ? `${discogsUrl ? `<a href="${discogsUrl}" target="_blank" rel="noopener noreferrer">` : ''}<img src="${coverImage}" style="width: 150px; height: 150px; object-fit: cover;" />${discogsUrl ? `</a>` : ''}` : ''}
-                        <div>${artist}</div>
-                        <div>${title}</div>
-                        <div>${year}</div>
+                    <div id="release-${releaseId}" data-release-id="${releaseId}" class="release-card">
+                        ${coverImage ? `${discogsUrl ? `<a href="${discogsUrl}" target="_blank" rel="noopener noreferrer">` : ''}<img src="${coverImage}" alt="${escapeHtml(artist)} - ${escapeHtml(title)}" />${discogsUrl ? `</a>` : ''}` : ''}
+                        <div class="artist">${escapeHtml(artist)}</div>
+                        <div class="title">${escapeHtml(title)}</div>
+                        ${year ? `<div class="year">${escapeHtml(year)}</div>` : ''}
                         <div class="rating-${releaseId}">Loading rating...</div>
                         ${genreLinks ? `<div class="genres">${genreLinks}</div>` : ''}
                     </div>
                 `;
             }).join('');
 
-            collectionDiv.innerHTML += releasesHTML;
+            collectionDiv.innerHTML = headerHTML + `<div id="releases-grid">${releasesHTML}</div>`;
 
             // Fetch ratings asynchronously for all releases with rate limiting
             // Process in batches to avoid overwhelming the API
@@ -191,39 +277,136 @@
             }
         }
 
+        async function loadCachedCollection() {
+            try {
+                const response = await fetch('/data/collection.json');
+                if (!response.ok) return null;
+                const data = await response.json();
+                if (data && data.releases && Array.isArray(data.releases)) {
+                    return data;
+                }
+            } catch (err) {
+                console.log('Cached data not available, will fetch from API');
+            }
+            return null;
+        }
+
+        async function fetchCollectionFromAPI() {
+            // Only works on localhost via server proxy
+            if (!IS_LOCALHOST) {
+                throw new Error('API calls only available on localhost. Use cached data on GitHub Pages.');
+            }
+            
+            const collectionDiv = document.getElementById('collection');
+            
+            function updateStatus(message) {
+                const statusDiv = collectionDiv.querySelector('div');
+                if (statusDiv) {
+                    statusDiv.textContent = message;
+                }
+            }
+
+            // Get username from server (no credentials in frontend)
+            const userInfoResponse = await fetch('/api/user-info');
+            const userInfo = await userInfoResponse.json();
+            const username = userInfo.username;
+
+            updateStatus('Fetching collection folders...');
+            const foldersData = await discogsFetch(`/users/${username}/collection/folders`, 'Folders', 3, updateStatus);
+            
+            // Add delay after folders request to respect rate limits
+            await new Promise(resolve => setTimeout(resolve, 1200));
+            
+            const folders = foldersData.folders || [];
+            const allFolder = folders.find(f => f.id === 0) || folders[0];
+            if (!allFolder) {
+                throw new Error('No collection folders found.');
+            }
+
+            // Fetch first page to get pagination info
+            updateStatus('Fetching collection data (page 1)...');
+            const firstPageData = await discogsFetch(
+                `/users/${username}/collection/folders/${allFolder.id}/releases?per_page=100&page=1`,
+                'Collection page 1',
+                3,
+                updateStatus
+            );
+            
+            // Add delay after first page request
+            await new Promise(resolve => setTimeout(resolve, 1200));
+            const pagination = firstPageData.pagination || {};
+            const totalPages = pagination.pages || 1;
+            totalItems = pagination.items || 0;
+
+            // Collect all releases from first page
+            let allReleases = firstPageData.releases || [];
+
+            // Fetch remaining pages with rate limiting
+            // Discogs API allows ~60 requests per minute, so add delay between requests
+            for (let page = 2; page <= totalPages; page++) {
+                updateStatus(`Fetching collection data (page ${page}/${totalPages})...`);
+                const pageData = await discogsFetch(
+                    `/users/${username}/collection/folders/${allFolder.id}/releases?per_page=100&page=${page}`,
+                    `Collection page ${page}`,
+                    3,
+                    updateStatus
+                );
+                allReleases = allReleases.concat(pageData.releases || []);
+                
+                // Add delay between requests to respect rate limits (1.2 seconds = ~50 requests/min)
+                if (page < totalPages) {
+                    await new Promise(resolve => setTimeout(resolve, 1200));
+                }
+            }
+
+            return {
+                pagination: pagination,
+                releases: allReleases,
+                lastUpdated: new Date().toISOString()
+            };
+        }
+
         async function fetchCollection() {
             const collectionDiv = document.getElementById('collection');
-            collectionDiv.innerHTML = '<div>Loading your collection...</div>';
+            let statusMessage = 'Loading your collection...';
+            collectionDiv.innerHTML = `<div>${statusMessage}</div>`;
+
+            function updateStatus(message) {
+                statusMessage = message;
+                const statusDiv = collectionDiv.querySelector('div');
+                if (statusDiv) {
+                    statusDiv.textContent = message;
+                }
+            }
 
             try {
-                const username = DISCOGS.username;
-                const foldersData = await discogsFetch(`/users/${username}/collection/folders`, 'Folders');
-                const folders = foldersData.folders || [];
-                const allFolder = folders.find(f => f.id === 0) || folders[0];
-                if (!allFolder) {
-                    throw new Error('No collection folders found.');
+                // Try to load from cached data first
+                updateStatus('Loading cached collection data...');
+                const cachedData = await loadCachedCollection();
+                
+                if (cachedData && cachedData.releases && cachedData.releases.length > 0) {
+                    allReleases = cachedData.releases;
+                    totalItems = cachedData.pagination?.items || cachedData.releases.length;
+                    lastUpdated = cachedData.lastUpdated || null;
+                    const lastUpdatedDisplay = lastUpdated ? new Date(lastUpdated).toLocaleString() : 'unknown';
+                    updateStatus(`Loaded ${allReleases.length} albums from cache (updated: ${lastUpdatedDisplay})`);
+                    await new Promise(resolve => setTimeout(resolve, 500)); // Brief pause to show message
+                } else {
+                    // Fall back to API only on localhost (via server proxy)
+                    if (IS_LOCALHOST) {
+                        updateStatus('Cached data not available, fetching from API...');
+                        const apiData = await fetchCollectionFromAPI();
+                        allReleases = apiData.releases;
+                        totalItems = apiData.pagination?.items || apiData.releases.length;
+                        lastUpdated = apiData.lastUpdated || new Date().toISOString();
+                        updateStatus('Fetched from API successfully');
+                    } else {
+                        // On GitHub Pages, require cached data
+                        throw new Error('Cached collection data not available. The GitHub Actions workflow should create /data/collection.json. Please check if the workflow has run successfully.');
+                    }
                 }
-
-                // Fetch first page to get pagination info
-                const firstPageData = await discogsFetch(
-                    `/users/${username}/collection/folders/${allFolder.id}/releases?per_page=100&page=1`,
-                    'Collection page 1'
-                );
-                const pagination = firstPageData.pagination || {};
-                const totalPages = pagination.pages || 1;
-                totalItems = pagination.items || 0;
-
-                // Collect all releases from first page
-                allReleases = firstPageData.releases || [];
-
-                // Fetch remaining pages
-                for (let page = 2; page <= totalPages; page++) {
-                    const pageData = await discogsFetch(
-                        `/users/${username}/collection/folders/${allFolder.id}/releases?per_page=100&page=${page}`,
-                        `Collection page ${page}`
-                    );
-                    allReleases = allReleases.concat(pageData.releases || []);
-                }
+                
+                updateStatus('Displaying collection...');
 
                 await applySearchFilter();
 
