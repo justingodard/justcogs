@@ -3,7 +3,7 @@
     "page": 1,
     "pages": 1,
     "per_page": 100,
-    "items": 75,
+    "items": 76,
     "urls": {}
   },
   "releases": [
@@ -1226,6 +1226,62 @@
         ],
         "styles": [
           "Fusion"
+        ]
+      },
+      "folder_id": 1
+    },
+    {
+      "id": 84825,
+      "instance_id": 2106476483,
+      "date_added": "2026-01-25T07:21:11-08:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 84825,
+        "master_id": 5948,
+        "master_url": "https://api.discogs.com/masters/5948",
+        "resource_url": "https://api.discogs.com/releases/84825",
+        "thumb": "https://i.discogs.com/wnGh-pJVNe9cpieWocjiD3T1-9brgvh3klRdWOtiV3Q/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg0ODI1/LTEyMzQ5NjU3Mjgu/anBlZw.jpeg",
+        "cover_image": "https://i.discogs.com/9nhTFx4kXHxywSi3CNHALtff0rc-a1zYMPjq58TmY5k/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg0ODI1/LTEyMzQ5NjU3Mjgu/anBlZw.jpeg",
+        "title": "Loveless",
+        "year": 1991,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+              "LP",
+              "Album"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Creation Records",
+            "catno": "crelp 060",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 1658,
+            "resource_url": "https://api.discogs.com/labels/1658"
+          }
+        ],
+        "artists": [
+          {
+            "name": "My Bloody Valentine",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 6516,
+            "resource_url": "https://api.discogs.com/artists/6516"
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "styles": [
+          "Alternative Rock",
+          "Shoegaze",
+          "Noise Rock"
         ]
       },
       "folder_id": 1
@@ -4674,5 +4730,5 @@
       "folder_id": 1
     }
   ],
-  "lastUpdated": "2026-01-25T13:22:20.474Z"
+  "lastUpdated": "2026-01-25T15:31:45.791Z"
 }
