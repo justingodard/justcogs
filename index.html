@@ -12,6 +12,13 @@
     <div id="collection"></div>
 
     <script>
+        // Discogs credentials (exposed for GitHub Pages static hosting)
+        const DISCOGS = {
+            username: 'justingodard',
+            token: 'QGVdnZJMyYIMSYAPethpfqJuwgEgbkLOEJMdgTZo'
+        };
+        const DISCOGS_API = 'https://api.discogs.com';
+
         // Store all releases globally
         let allReleases = [];
         let totalItems = 0;
@@ -45,8 +52,14 @@
             await displayReleases(filtered, filtered.length);
         }
 
-        async function fetchJson(url, label) {
-            const response = await fetch(url);
+        async function discogsFetch(path, label) {
+            const url = path.startsWith('http') ? path : `${DISCOGS_API}${path}`;
+            const response = await fetch(url, {
+                headers: {
+                    'Authorization': `Discogs token=${DISCOGS.token}`,
+                    'User-Agent': 'Justcogs/1.0'
+                }
+            });
             if (!response.ok) {
                 throw new Error(`${label} request failed (${response.status}).`);
             }
@@ -70,7 +83,12 @@
             }
 
             try {
-                const response = await fetch(`/api/releases/${releaseId}`);
+                const response = await fetch(`${DISCOGS_API}/releases/${releaseId}`, {
+                    headers: {
+                        'Authorization': `Discogs token=${DISCOGS.token}`,
+                        'User-Agent': 'Justcogs/1.0'
+                    }
+                });
                 if (!response.ok) {
                     console.warn(`Failed to fetch release ${releaseId}: ${response.status}`);
                     ratingsCache[releaseId] = null;
@@ -178,10 +196,8 @@
             collectionDiv.innerHTML = '<div>Loading your collection...</div>';
 
             try {
-                const userInfo = await fetchJson('/api/user-info', 'User info');
-                const username = userInfo.username;
-
-                const foldersData = await fetchJson(`/api/users/${username}/collection/folders`, 'Folders');
+                const username = DISCOGS.username;
+                const foldersData = await discogsFetch(`/users/${username}/collection/folders`, 'Folders');
                 const folders = foldersData.folders || [];
                 const allFolder = folders.find(f => f.id === 0) || folders[0];
                 if (!allFolder) {
@@ -189,8 +205,8 @@
                 }
 
                 // Fetch first page to get pagination info
-                const firstPageData = await fetchJson(
-                    `/api/users/${username}/collection/folders/${allFolder.id}/releases?per_page=100&page=1`,
+                const firstPageData = await discogsFetch(
+                    `/users/${username}/collection/folders/${allFolder.id}/releases?per_page=100&page=1`,
                     'Collection page 1'
                 );
                 const pagination = firstPageData.pagination || {};
@@ -202,8 +218,8 @@
 
                 // Fetch remaining pages
                 for (let page = 2; page <= totalPages; page++) {
-                    const pageData = await fetchJson(
-                        `/api/users/${username}/collection/folders/${allFolder.id}/releases?per_page=100&page=${page}`,
+                    const pageData = await discogsFetch(
+                        `/users/${username}/collection/folders/${allFolder.id}/releases?per_page=100&page=${page}`,
                         `Collection page ${page}`
                     );
                     allReleases = allReleases.concat(pageData.releases || []);
