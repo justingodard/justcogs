@@ -235,8 +235,7 @@
 
                 return `
                     <div id="release-${releaseId}" data-release-id="${releaseId}" class="release-card">
-                        ${coverImage ? `${discogsUrl ? `<a href="${discogsUrl}" target="_blank" rel="noopener noreferrer">` : ''}<img src="${coverImage}" alt="${escapeHtml(artist)} - ${escapeHtml(title)}" />${discogsUrl ? `</a>` : ''}` : ''}
-                        <div class="artist">${escapeHtml(artist)}</div>
+                        ${coverImage ? `${discogsUrl ? `<a href="${discogsUrl}">` : ''}<img src="${coverImage}" alt="${escapeHtml(artist)} - ${escapeHtml(title)}" />${discogsUrl ? `</a>` : ''}` : ''}                        <div class="artist">${escapeHtml(artist)}</div>
                         <div class="title">${escapeHtml(title)}</div>
                         ${year ? `<div class="year">${escapeHtml(year)}</div>` : ''}
                         <div class="rating-${releaseId}">Loading rating...</div>
