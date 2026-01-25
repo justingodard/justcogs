@@ -3,7 +3,7 @@
     "page": 1,
     "pages": 1,
     "per_page": 100,
-    "items": 76,
+    "items": 82,
     "urls": {}
   },
   "releases": [
@@ -85,7 +85,7 @@
           "Dream Pop"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.59
     },
     {
       "id": 1255883,
@@ -147,7 +147,7 @@
         ],
         "styles": []
       },
-      "folder_id": 1
+      "community_rating": 4.41
     },
     {
       "id": 1247061,
@@ -202,7 +202,7 @@
           "Hard Bop"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.35
     },
     {
       "id": 1060458,
@@ -262,7 +262,7 @@
           "Funk"
         ]
       },
-      "folder_id": 1
+      "community_rating": 3.95
     },
     {
       "id": 2693232,
@@ -318,7 +318,7 @@
           "Dubstep"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.46
     },
     {
       "id": 4002447,
@@ -374,7 +374,81 @@
           "Bop"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.38
+    },
+    {
+      "id": 5622328,
+      "instance_id": 2106508410,
+      "date_added": "2026-01-25T08:19:44-08:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 5622328,
+        "master_id": 32208,
+        "master_url": "https://api.discogs.com/masters/32208",
+        "resource_url": "https://api.discogs.com/releases/5622328",
+        "thumb": "https://i.discogs.com/zeJKPdklv0xzSbnaJX8qg8RujjEB4TUtKpfqUO0sotI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU2MjIz/MjgtMTU3OTQ5NTM5/NC0yMTkwLmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/P_VxwOaRC7p9rM0Wg4NT59ON99NJq26uxn8M4lhol4A/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU2MjIz/MjgtMTU3OTQ5NTM5/NC0yMTkwLmpwZWc.jpeg",
+        "title": "Blue Train",
+        "year": 2014,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "United (IS Lacquers)",
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Remastered",
+              "Stereo"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Blue Note",
+            "catno": "BLP 1577",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "name": "Blue Note",
+            "catno": "1577",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "name": "Blue Note",
+            "catno": "B0020059-01",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "resource_url": "https://api.discogs.com/labels/281"
+          }
+        ],
+        "artists": [
+          {
+            "name": "John Coltrane",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 97545,
+            "resource_url": "https://api.discogs.com/artists/97545"
+          }
+        ],
+        "genres": [
+          "Jazz"
+        ],
+        "styles": [
+          "Hard Bop"
+        ]
+      },
+      "community_rating": 4.66
     },
     {
       "id": 3562502,
@@ -438,7 +512,7 @@
           "Zydeco"
         ]
       },
-      "folder_id": 1
+      "community_rating": 3.88
     },
     {
       "id": 1727023,
@@ -504,7 +578,7 @@
           "Pop Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.13
     },
     {
       "id": 4701710,
@@ -570,7 +644,7 @@
           "Blues Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.36
     },
     {
       "id": 2379908,
@@ -628,7 +702,65 @@
           "Blues Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.47
+    },
+    {
+      "id": 1259328,
+      "instance_id": 2106513773,
+      "date_added": "2026-01-25T08:28:49-08:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 1259328,
+        "master_id": 43954,
+        "master_url": "https://api.discogs.com/masters/43954",
+        "resource_url": "https://api.discogs.com/releases/1259328",
+        "thumb": "https://i.discogs.com/VUkaoC6GZQUn5KEqQdaqGajsy5LloNFSj94wGNGRgVs/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNTkz/MjgtMTQzMTUyNzM5/Mi02ODYyLmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/Huu-yYsln-YH7Br6d2oUXESoPCHuGnVOenn9sIZa8uQ/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNTkz/MjgtMTQzMTUyNzM5/Mi02ODYyLmpwZWc.jpeg",
+        "title": "Devotion",
+        "year": 2008,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "2",
+            "descriptions": [
+              "LP",
+              "Album"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Carpark Records",
+            "catno": "Carpark 42",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 842,
+            "resource_url": "https://api.discogs.com/labels/842"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Beach House",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 592308,
+            "resource_url": "https://api.discogs.com/artists/592308"
+          }
+        ],
+        "genres": [
+          "Rock",
+          "Pop"
+        ],
+        "styles": [
+          "Indie Rock",
+          "Ballad",
+          "Indie Pop",
+          "Dream Pop"
+        ]
+      },
+      "community_rating": 4.25
     },
     {
       "id": 1797230,
@@ -691,7 +823,7 @@
           "Folk Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.19
     },
     {
       "id": 374993,
@@ -764,7 +896,7 @@
           "Folk Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.4
     },
     {
       "id": 379036,
@@ -830,7 +962,7 @@
           "Art Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.31
     },
     {
       "id": 435068,
@@ -885,7 +1017,7 @@
           "Ska"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.42
     },
     {
       "id": 2971779,
@@ -939,7 +1071,7 @@
           "House"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.15
     },
     {
       "id": 863164,
@@ -994,7 +1126,7 @@
           "Bop"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.31
     },
     {
       "id": 2582014,
@@ -1049,7 +1181,7 @@
           "Classic Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.13
     },
     {
       "id": 1309862,
@@ -1108,7 +1240,7 @@
           "Soundtrack"
         ]
       },
-      "folder_id": 1
+      "community_rating": 3.94
     },
     {
       "id": 66846,
@@ -1165,7 +1297,7 @@
           "Fusion"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.24
     },
     {
       "id": 877385,
@@ -1228,63 +1360,81 @@
           "Fusion"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.24
     },
     {
-      "id": 84825,
-      "instance_id": 2106476483,
-      "date_added": "2026-01-25T07:21:11-08:00",
+      "id": 7606066,
+      "instance_id": 2106508991,
+      "date_added": "2026-01-25T08:20:44-08:00",
       "rating": 0,
       "basic_information": {
-        "id": 84825,
-        "master_id": 5948,
-        "master_url": "https://api.discogs.com/masters/5948",
-        "resource_url": "https://api.discogs.com/releases/84825",
-        "thumb": "https://i.discogs.com/wnGh-pJVNe9cpieWocjiD3T1-9brgvh3klRdWOtiV3Q/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg0ODI1/LTEyMzQ5NjU3Mjgu/anBlZw.jpeg",
-        "cover_image": "https://i.discogs.com/9nhTFx4kXHxywSi3CNHALtff0rc-a1zYMPjq58TmY5k/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg0ODI1/LTEyMzQ5NjU3Mjgu/anBlZw.jpeg",
-        "title": "Loveless",
-        "year": 1991,
+        "id": 7606066,
+        "master_id": 5460,
+        "master_url": "https://api.discogs.com/masters/5460",
+        "resource_url": "https://api.discogs.com/releases/7606066",
+        "thumb": "https://i.discogs.com/qtaNJ--9eURswMibCufWL04p1eTtJKRnjLNtepcXTTM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc2MDYw/NjYtMTQ0NTAxMDM0/MC00NjgzLmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/snjTBhy7S6FkxJ2v_dEiIK1aBPbDMFLSYNYhyIJ9jaQ/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc2MDYw/NjYtMTQ0NTAxMDM0/MC00NjgzLmpwZWc.jpeg",
+        "title": "Kind Of Blue",
+        "year": 2015,
         "formats": [
           {
             "name": "Vinyl",
             "qty": "1",
+            "text": "180 Gram",
             "descriptions": [
               "LP",
-              "Album"
+              "Album",
+              "Reissue",
+              "Repress",
+              "Stereo"
             ]
           }
         ],
         "labels": [
           {
-            "name": "Creation Records",
-            "catno": "crelp 060",
+            "name": "Columbia",
+            "catno": "88875111921",
             "entity_type": "1",
             "entity_type_name": "Label",
-            "id": 1658,
-            "resource_url": "https://api.discogs.com/labels/1658"
+            "id": 1866,
+            "resource_url": "https://api.discogs.com/labels/1866"
+          },
+          {
+            "name": "Legacy",
+            "catno": "88875111921",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15491,
+            "resource_url": "https://api.discogs.com/labels/15491"
+          },
+          {
+            "name": "Sony Music",
+            "catno": "88875111921",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 25487,
+            "resource_url": "https://api.discogs.com/labels/25487"
           }
         ],
         "artists": [
           {
-            "name": "My Bloody Valentine",
+            "name": "Miles Davis",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 6516,
-            "resource_url": "https://api.discogs.com/artists/6516"
+            "id": 23755,
+            "resource_url": "https://api.discogs.com/artists/23755"
           }
         ],
         "genres": [
-          "Rock"
+          "Jazz"
         ],
         "styles": [
-          "Alternative Rock",
-          "Shoegaze",
-          "Noise Rock"
+          "Modal"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.73
     },
     {
       "id": 5702478,
@@ -1345,7 +1495,7 @@
           "Soul-Jazz"
         ]
       },
-      "folder_id": 1
+      "community_rating": 3.86
     },
     {
       "id": 3141487,
@@ -1410,7 +1560,7 @@
           "Jazz-Funk"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.24
     },
     {
       "id": 1351709,
@@ -1467,7 +1617,7 @@
           "Holiday"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.11
     },
     {
       "id": 1753330,
@@ -1536,7 +1686,7 @@
           "Harmonica Blues"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.37
     },
     {
       "id": 4048433,
@@ -1591,7 +1741,7 @@
           "Classic Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.19
     },
     {
       "id": 10654836,
@@ -1647,7 +1797,7 @@
           "Ballad"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.04
     },
     {
       "id": 3169563,
@@ -1704,7 +1854,7 @@
           "Indie Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.49
     },
     {
       "id": 667414,
@@ -1768,7 +1918,7 @@
           "Art Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.26
     },
     {
       "id": 4622918,
@@ -1825,7 +1975,7 @@
           "Psychedelic Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.55
     },
     {
       "id": 1166538,
@@ -1889,7 +2039,7 @@
           "Roots Reggae"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.21
     },
     {
       "id": 120096,
@@ -1949,7 +2099,7 @@
           "Funk"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.45
     },
     {
       "id": 20186656,
@@ -2010,7 +2160,7 @@
           "Indie Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.68
     },
     {
       "id": 3120974,
@@ -2070,7 +2220,7 @@
           "Minimal"
         ]
       },
-      "folder_id": 1
+      "community_rating": 5
     },
     {
       "id": 2562439,
@@ -2128,7 +2278,7 @@
           "Tech House"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.05
     },
     {
       "id": 3966280,
@@ -2188,7 +2338,7 @@
         ],
         "styles": []
       },
-      "folder_id": 1
+      "community_rating": 3.25
     },
     {
       "id": 670544,
@@ -2261,7 +2411,7 @@
           "Funk"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.27
     },
     {
       "id": 2681495,
@@ -2317,7 +2467,7 @@
           "Blues Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.38
     },
     {
       "id": 8585976,
@@ -2371,7 +2521,7 @@
           "Roots Reggae"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.27
     },
     {
       "id": 378895,
@@ -2428,7 +2578,62 @@
           "Indie Pop"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.5
+    },
+    {
+      "id": 1580307,
+      "instance_id": 2106507950,
+      "date_added": "2026-01-25T08:18:57-08:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 1580307,
+        "master_id": 27874,
+        "master_url": "https://api.discogs.com/masters/27874",
+        "resource_url": "https://api.discogs.com/releases/1580307",
+        "thumb": "https://i.discogs.com/flg1FbXFFszl4vzFt5kMAZ2ppLIhpO881KLI11yAGEw/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1ODAz/MDctMTMwNjEyNTA0/Ny5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/5YUNd1XW5HYbcQI3p20v2k5HDvmHiarT1YzRRdTgC3k/rs:fit/g:sm/q:90/h:300/w:301/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1ODAz/MDctMTMwNjEyNTA0/Ny5qcGVn.jpeg",
+        "title": "Ocean Rain",
+        "year": 1984,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+              "LP",
+              "Album"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Korova",
+            "catno": "24 03881",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 13057,
+            "resource_url": "https://api.discogs.com/labels/13057"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Echo & The Bunnymen",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 45115,
+            "resource_url": "https://api.discogs.com/artists/45115"
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "styles": [
+          "New Wave",
+          "Indie Rock"
+        ]
+      },
+      "community_rating": 4.33
     },
     {
       "id": 4243365,
@@ -2487,7 +2692,7 @@
           "Experimental"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.47
     },
     {
       "id": 592426,
@@ -2542,7 +2747,7 @@
           "Jazz-Funk"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.61
     },
     {
       "id": 10536536,
@@ -2606,7 +2811,7 @@
           "Blues Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.18
     },
     {
       "id": 4331747,
@@ -2675,7 +2880,7 @@
           "Shoegaze"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.33
     },
     {
       "id": 253873,
@@ -2738,7 +2943,7 @@
           "Jazz-Funk"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.25
     },
     {
       "id": 7395,
@@ -2793,7 +2998,63 @@
           "Ambient"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.32
+    },
+    {
+      "id": 3741958,
+      "instance_id": 2106514826,
+      "date_added": "2026-01-25T08:30:33-08:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 3741958,
+        "master_id": 440002,
+        "master_url": "https://api.discogs.com/masters/440002",
+        "resource_url": "https://api.discogs.com/releases/3741958",
+        "thumb": "https://i.discogs.com/7la00sfg8wQFTbPk6Apr-BtPX9z6t8Z8ptJhdnrzB-A/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3NDE5/NTgtMTM4ODM0NDc4/MC01MTAyLmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/qK6XTfKHrFX0ly0l8W6mbd25d3Hvgc0gqcHH5hb1yHw/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3NDE5/NTgtMTM4ODM0NDc4/MC01MTAyLmpwZWc.jpeg",
+        "title": "20/20 Twenty No.1 Hits From Twenty Years At Motown",
+        "year": 1980,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "2",
+            "descriptions": [
+              "LP",
+              "Compilation"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Motown",
+            "catno": "M-937/2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 1723,
+            "resource_url": "https://api.discogs.com/labels/1723"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Various",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 194,
+            "resource_url": "https://api.discogs.com/artists/194"
+          }
+        ],
+        "genres": [
+          "Funk / Soul"
+        ],
+        "styles": [
+          "Soul",
+          "Funk",
+          "Rhythm & Blues"
+        ]
+      },
+      "community_rating": 4.27
     },
     {
       "id": 1395530,
@@ -2859,7 +3120,7 @@
           "Vocal"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.24
     },
     {
       "id": 74743,
@@ -2918,7 +3179,7 @@
           "Experimental"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.67
     },
     {
       "id": 1622714,
@@ -2991,7 +3252,7 @@
           "Glam"
         ]
       },
-      "folder_id": 1
+      "community_rating": 3.91
     },
     {
       "id": 4343582,
@@ -3055,7 +3316,7 @@
           "Experimental"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.33
     },
     {
       "id": 422921,
@@ -3121,7 +3382,7 @@
           "Art Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.49
     },
     {
       "id": 9562941,
@@ -3187,7 +3448,7 @@
           "Hard Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.75
     },
     {
       "id": 11926002,
@@ -3243,7 +3504,7 @@
           "Country Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 5
     },
     {
       "id": 1044287,
@@ -3300,7 +3561,7 @@
           "Country Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.44
     },
     {
       "id": 13552836,
@@ -3355,7 +3616,7 @@
           "Pop Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.24
     },
     {
       "id": 1568483,
@@ -3431,7 +3692,7 @@
           "Psychedelic Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 3.95
     },
     {
       "id": 1963248,
@@ -3498,7 +3759,7 @@
           "Surf"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.64
     },
     {
       "id": 3030024,
@@ -3556,7 +3817,7 @@
           "Disco"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.33
     },
     {
       "id": 2122894,
@@ -3612,7 +3873,7 @@
           "Minimal"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.54
     },
     {
       "id": 116491,
@@ -3670,7 +3931,7 @@
           "Art Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.55
     },
     {
       "id": 1199496,
@@ -3742,7 +4003,7 @@
           "Art Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.2
     },
     {
       "id": 412038,
@@ -3825,7 +4086,65 @@
           "Dream Pop"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.56
+    },
+    {
+      "id": 5090976,
+      "instance_id": 2106509395,
+      "date_added": "2026-01-25T08:21:26-08:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 5090976,
+        "master_id": 618555,
+        "master_url": "https://api.discogs.com/masters/618555",
+        "resource_url": "https://api.discogs.com/releases/5090976",
+        "thumb": "https://i.discogs.com/AHEofffxhDrbHaXRbwJtpOuUQJYKNc-foDnxFzMqIyA/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUwOTA5/NzYtMTM4NDMwNjIx/Ni03NDc1LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/xKv3jQ9xYLR_OOUEgKzD1WRHUH8YgkrbgenL1ec0DvI/rs:fit/g:sm/q:90/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUwOTA5/NzYtMTM4NDMwNjIx/Ni03NDc1LmpwZWc.jpeg",
+        "title": "Boardwalk",
+        "year": 2013,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+              "LP",
+              "Album"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Stones Throw Records",
+            "catno": "STH2323",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 1217,
+            "resource_url": "https://api.discogs.com/labels/1217"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Boardwalk",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 3450100,
+            "resource_url": "https://api.discogs.com/artists/3450100"
+          }
+        ],
+        "genres": [
+          "Electronic",
+          "Rock",
+          "Pop"
+        ],
+        "styles": [
+          "Lo-Fi",
+          "Indie Rock",
+          "Ethereal"
+        ]
+      },
+      "community_rating": 4.64
     },
     {
       "id": 2111843,
@@ -3897,7 +4216,7 @@
           "Dream Pop"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.5
     },
     {
       "id": 13286331,
@@ -3954,7 +4273,7 @@
           "Funk"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.49
     },
     {
       "id": 355233,
@@ -4024,7 +4343,7 @@
           "Disco"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.47
     },
     {
       "id": 174477,
@@ -4088,7 +4407,7 @@
           "Funk"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.33
     },
     {
       "id": 3449731,
@@ -4152,7 +4471,7 @@
           "Soul"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.15
     },
     {
       "id": 723685,
@@ -4207,7 +4526,7 @@
           "Ambient"
         ]
       },
-      "folder_id": 1
+      "community_rating": 3.85
     },
     {
       "id": 2798688,
@@ -4288,7 +4607,7 @@
           "Experimental"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.25
     },
     {
       "id": 382534,
@@ -4350,7 +4669,7 @@
           "Ska"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.2
     },
     {
       "id": 5034045,
@@ -4418,7 +4737,73 @@
           "Psychedelic Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.56
+    },
+    {
+      "id": 4785939,
+      "instance_id": 2106513339,
+      "date_added": "2026-01-25T08:28:05-08:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 4785939,
+        "master_id": 173483,
+        "master_url": "https://api.discogs.com/masters/173483",
+        "resource_url": "https://api.discogs.com/releases/4785939",
+        "thumb": "https://i.discogs.com/dAkboT81d0BIY9J_ZOIh8FrGjLcVlUDlKXd_wl6q6lY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ3ODU5/MzktMTYwNDM5Nzcy/Mi03NTE0LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/FHfKmCmDg-EptH8z7R8UfRKLrqy83EdPBwInz75crJw/rs:fit/g:sm/q:90/h:567/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ3ODU5/MzktMTYwNDM5Nzcy/Mi03NTE0LmpwZWc.jpeg",
+        "title": "Porgy And Bess",
+        "year": 0,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "2",
+            "text": "Hauppauge Pressing, Gatefold",
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Verve Records",
+            "catno": "VE-2-2507",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 5041,
+            "resource_url": "https://api.discogs.com/labels/5041"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Ella Fitzgerald",
+            "anv": "",
+            "join": "And",
+            "role": "",
+            "tracks": "",
+            "id": 31615,
+            "resource_url": "https://api.discogs.com/artists/31615"
+          },
+          {
+            "name": "Louis Armstrong",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 38201,
+            "resource_url": "https://api.discogs.com/artists/38201"
+          }
+        ],
+        "genres": [
+          "Jazz"
+        ],
+        "styles": [
+          "Swing",
+          "Vocal"
+        ]
+      },
+      "community_rating": 3.95
     },
     {
       "id": 1168661,
@@ -4479,7 +4864,7 @@
           "Classic Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.37
     },
     {
       "id": 3536289,
@@ -4544,7 +4929,7 @@
           "Acoustic"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.39
     },
     {
       "id": 6733818,
@@ -4605,7 +4990,7 @@
           "Dream Pop"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.64
     },
     {
       "id": 6734114,
@@ -4663,7 +5048,7 @@
           "Indie Rock"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.64
     },
     {
       "id": 4548231,
@@ -4727,8 +5112,8 @@
           "IDM"
         ]
       },
-      "folder_id": 1
+      "community_rating": 4.45
     }
   ],
-  "lastUpdated": "2026-01-25T15:31:45.791Z"
+  "lastUpdated": "2026-01-25T18:00:59.168Z"
 }

@@ -87,6 +87,32 @@ async function main() {
             }
         }
 
+        // Fetch community ratings for each release
+        console.log(`Fetching community ratings for ${allReleases.length} releases...`);
+        for (let i = 0; i < allReleases.length; i++) {
+            const release = allReleases[i];
+            const releaseId = release.basic_information?.id;
+            
+            if (releaseId) {
+                try {
+                    console.log(`Fetching rating for release ${i + 1}/${allReleases.length} (ID: ${releaseId})...`);
+                    const releaseDetails = await fetchJson(`${DISCOGS_API}/releases/${releaseId}`);
+                    
+                    // Save community rating
+                    const communityRating = releaseDetails.community?.rating?.average || null;
+                    release.community_rating = communityRating;
+                    
+                    // Rate limit: wait 1.2 seconds between requests
+                    if (i < allReleases.length - 1) {
+                        await delay(1200);
+                    }
+                } catch (error) {
+                    console.warn(`Failed to fetch rating for release ${releaseId}:`, error.message);
+                    release.community_rating = null;
+                }
+            }
+        }
+
         // Save consolidated collection data
         const collectionData = {
             pagination: pagination,

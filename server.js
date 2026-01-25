@@ -42,6 +42,27 @@ const server = http.createServer((req, res) => {
         return;
     }
 
+    // Serve data directory (for collection.json)
+    if (parsedUrl.pathname.startsWith('/data/')) {
+        const filePath = path.join(__dirname, parsedUrl.pathname);
+        console.log(`Serving file: ${filePath}`);
+        fs.readFile(filePath, (err, data) => {
+            if (err) {
+                console.error(`Error reading file ${filePath}:`, err);
+                res.writeHead(404, { 'Content-Type': 'text/plain' });
+                res.end(`File not found: ${parsedUrl.pathname}`);
+                return;
+            }
+            console.log(`Successfully served ${parsedUrl.pathname} (${data.length} bytes)`);
+            res.writeHead(200, { 
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            });
+            res.end(data);
+        });
+        return;
+    }
+
     // User info endpoint (returns username only, no sensitive data)
     if (parsedUrl.pathname === '/api/user-info') {
         res.writeHead(200, {

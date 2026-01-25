@@ -2,9 +2,9 @@ name: Update Discogs Collection
 
 on:
   schedule:
-    # Run every 15 minutes (GitHub Actions minimum is 5 minutes, but 15 is more reasonable)
+    # Run every 15 minutes
     - cron: '*/15 * * * *' # runs every 15 minutes
-  workflow_dispatch: # allows manual trigger
+  # workflow_dispatch: # allows manual trigger
 
 jobs:
   update:

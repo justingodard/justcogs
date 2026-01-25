@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Justcogs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            margin: 24px;
+        }
         #releases-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -27,10 +36,11 @@
             line-height: 1.4;
         }
         .release-card .artist {
-            font-weight: bold;
+            font-weight: 400;
         }
         .release-card .title {
             color: #333;
+            font-weight: 600;
         }
         .release-card .year {
             color: #666;
@@ -40,30 +50,91 @@
             font-size: 0.8em;
             margin-top: 4px;
         }
+        #search-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        #search-input {
+            height: 40px;
+            padding: 0 40px 0 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #clear-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #666;
+            font-size: 20px;
+            line-height: 1;
+            font-weight: 300;
+        }
+        #clear-link:hover {
+            color: #000;
+        }
+        @media (max-width: 1100px) {
+            body {
+                margin: 16px;
+            }
+            #releases-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 16px;
+            }
+            .release-card > div {
+                font-size: 0.88em;
+            }
+            .release-card .year {
+                font-size: 0.82em;
+            }
+            .release-card .genres {
+                font-size: 0.76em;
+            }
+        }
+        @media (max-width: 900px) {
+            body {
+                margin: 16px;
+            }
+            #releases-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 14px;
+            }
+            .release-card > div {
+                font-size: 0.85em;
+            }
+            .release-card .year {
+                font-size: 0.8em;
+            }
+            .release-card .genres {
+                font-size: 0.75em;
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="search-container" style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+    <h1 style="margin-bottom: 20px; font-size: 2em; font-weight: 600;">Justcogs</h1>
+    <div id="search-container">
         <input type="text" id="search-input" placeholder="Search..." />
-        <span id="clear-link" style="color: #06c; text-decoration: underline; cursor: pointer; display: none;">Clear</span>
+        <span id="clear-link">×</span>
     </div>
+    <div id="last-sync" style="margin-bottom: 20px; font-size: 0.9em; color: #666;"></div>
     <div id="collection"></div>
 
     <script>
-        // Detect if running on localhost
-        const IS_LOCALHOST = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-        
-        // On GitHub Pages: use cached data only (no API calls, no credentials)
-        // On localhost: use server proxy (credentials in server-side config.js)
-        const API_BASE = IS_LOCALHOST ? '/api' : null; // null means don't make API calls
-
         // Store all releases globally
         let allReleases = [];
         let totalItems = 0;
         let searchQuery = '';
         let lastUpdated = null; // Store last update timestamp
-        // Cache for ratings to avoid refetching
-        let ratingsCache = {};
 
         function escapeHtml(s) {
             const t = String(s);
@@ -88,138 +159,74 @@
         async function applySearchFilter() {
             const q = searchQuery.trim().toLowerCase();
             const filtered = q === '' ? allReleases : allReleases.filter((r) => releaseMatchesSearch(r, q));
-            await displayReleases(filtered, filtered.length);
+            // Sort by album name (title)
+            const sorted = [...filtered].sort((a, b) => {
+                const titleA = (a.basic_information?.title || '').toLowerCase();
+                const titleB = (b.basic_information?.title || '').toLowerCase();
+                return titleA.localeCompare(titleB);
+            });
+            displayReleases(sorted, sorted.length);
         }
 
-        async function discogsFetch(path, label, retries = 3, updateStatus = null) {
-            // Only works on localhost via server proxy (no credentials in frontend)
-            if (!IS_LOCALHOST || !API_BASE) {
-                throw new Error('API calls only available on localhost. Use cached data on GitHub Pages.');
+        function getRating(release) {
+            // First, try to get the community rating from cached data
+            if (release.community_rating !== undefined && release.community_rating !== null) {
+                return release.community_rating;
             }
             
-            const url = path.startsWith('http') ? path : `${API_BASE}${path}`;
-            const headers = {}; // Server proxy handles authentication
-            
-            for (let attempt = 0; attempt < retries; attempt++) {
-                const response = await fetch(url, { headers });
-                
-                // Handle rate limiting (429) with exponential backoff
-                if (response.status === 429) {
-                    const retryAfter = response.headers.get('Retry-After');
-                    // Use Retry-After header if available, otherwise use longer exponential backoff
-                    // Discogs rate limit resets every minute, so wait at least 60 seconds
-                    const delay = retryAfter ? parseInt(retryAfter) * 1000 : Math.max(60000, Math.pow(2, attempt) * 15000);
-                    
-                    if (attempt < retries - 1) {
-                        const waitSeconds = Math.ceil(delay / 1000);
-                        const message = `${label} rate limited. Waiting ${waitSeconds} seconds before retry... (attempt ${attempt + 1}/${retries})`;
-                        console.warn(message);
-                        if (updateStatus) {
-                            updateStatus(message);
-                        }
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                        continue;
-                    } else {
-                        throw new Error(`${label} request failed: Rate limit exceeded. Discogs API allows 60 requests per minute. Please wait 60 seconds and refresh the page.`);
-                    }
-                }
-                
-                if (!response.ok) {
-                    throw new Error(`${label} request failed (${response.status}).`);
-                }
-
-                const text = await response.text();
-                if (!text || text.trim() === '') {
-                    throw new Error(`${label} response was empty.`);
-                }
-
-                try {
-                    return JSON.parse(text);
-                } catch (parseError) {
-                    throw new Error(`${label} returned invalid JSON.`);
-                }
-            }
-            
-            throw new Error(`${label} request failed after ${retries} attempts.`);
-        }
-
-        async function fetchRating(releaseId) {
-            // Check cache first
-            if (ratingsCache[releaseId] !== undefined) {
-                return ratingsCache[releaseId];
-            }
-
-            // Only fetch ratings on localhost (via server proxy)
-            // On GitHub Pages, skip rating fetches to avoid API calls
-            if (!IS_LOCALHOST || !API_BASE) {
-                ratingsCache[releaseId] = null;
-                return null;
-            }
-
-            try {
-                const url = `${API_BASE}/releases/${releaseId}`;
-                const headers = {}; // Server proxy handles authentication
-                const response = await fetch(url, { headers });
-                if (!response.ok) {
-                    console.warn(`Failed to fetch release ${releaseId}: ${response.status}`);
-                    ratingsCache[releaseId] = null;
-                    return null;
-                }
-                
-                // Check if response has content
-                const text = await response.text();
-                if (!text || text.trim() === '') {
-                    console.warn(`Empty response for release ${releaseId}`);
-                    ratingsCache[releaseId] = null;
-                    return null;
-                }
-                
-                let releaseData;
-                try {
-                    releaseData = JSON.parse(text);
-                } catch (parseError) {
-                    console.error(`Invalid JSON for release ${releaseId}:`, parseError);
-                    console.error(`Response text:`, text.substring(0, 200));
-                    ratingsCache[releaseId] = null;
-                    return null;
-                }
-                
-                // Try different possible locations for rating
-                const rating = releaseData.community?.rating?.average || 
-                              releaseData.community?.rating?.value ||
-                              releaseData.rating?.average ||
-                              null;
-                
-                // Cache the rating (even if null)
-                ratingsCache[releaseId] = rating;
-                return rating;
-            } catch (error) {
-                console.error(`Error fetching rating for release ${releaseId}:`, error);
-                ratingsCache[releaseId] = null;
-                return null;
-            }
+            // If not available in cache and we're on localhost, we could fetch it
+            // But for now, just return null if not in cached data
+            return null;
         }
 
         function formatTimestamp(timestamp) {
             if (!timestamp) return null;
             const date = new Date(timestamp);
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const day = String(date.getDate()).padStart(2, '0');
-            const hours = String(date.getHours()).padStart(2, '0');
-            const minutes = String(date.getMinutes()).padStart(2, '0');
-            return `${year}/${month}/${day} ${hours}:${minutes}`;
+            const now = new Date();
+            const diffMs = now - date;
+            const diffSeconds = Math.floor(diffMs / 1000);
+            const diffMinutes = Math.floor(diffSeconds / 60);
+            const diffHours = Math.floor(diffMinutes / 60);
+            const diffDays = Math.floor(diffHours / 24);
+            const diffWeeks = Math.floor(diffDays / 7);
+            const diffMonths = Math.floor(diffDays / 30);
+            const diffYears = Math.floor(diffDays / 365);
+
+            if (diffSeconds < 60) {
+                return 'just now';
+            } else if (diffMinutes < 60) {
+                return `${diffMinutes} minute${diffMinutes !== 1 ? 's' : ''} ago`;
+            } else if (diffHours < 24) {
+                return `${diffHours} hour${diffHours !== 1 ? 's' : ''} ago`;
+            } else if (diffDays < 7) {
+                return `${diffDays} day${diffDays !== 1 ? 's' : ''} ago`;
+            } else if (diffWeeks < 4) {
+                return `${diffWeeks} week${diffWeeks !== 1 ? 's' : ''} ago`;
+            } else if (diffMonths < 12) {
+                return `${diffMonths} month${diffMonths !== 1 ? 's' : ''} ago`;
+            } else {
+                return `${diffYears} year${diffYears !== 1 ? 's' : ''} ago`;
+            }
         }
 
-        async function displayReleases(releases, count) {
+        function displayReleases(releases, count) {
             const collectionDiv = document.getElementById('collection');
+            const lastSyncDiv = document.getElementById('last-sync');
             
-            // Display collection count and last API sync timestamp
-            const timestampText = lastUpdated ? formatTimestamp(lastUpdated) : null;
-            let headerHTML = `<div style="margin-bottom: 20px; font-weight: bold;">Your Collection: ${count} Albums</div>`;
-            if (timestampText) {
-                headerHTML += `<div style="margin-bottom: 20px; font-size: 0.9em; color: #666;">Last API sync: ${timestampText}</div>`;
+            // Update last API sync timestamp
+            if (lastUpdated) {
+                const timestampText = formatTimestamp(lastUpdated);
+                if (timestampText) {
+                    lastSyncDiv.textContent = `Last sync: ${timestampText}`;
+                } else {
+                    lastSyncDiv.textContent = '';
+                }
+            } else {
+                lastSyncDiv.textContent = '';
             }
+            
+            // No header HTML needed (removed "Your Collection" line)
+            let headerHTML = '';
             
             // Display releases in a grid layout
             const releasesHTML = releases.map((release, index) => {
@@ -235,10 +242,11 @@
 
                 return `
                     <div id="release-${releaseId}" data-release-id="${releaseId}" class="release-card">
-                        ${coverImage ? `${discogsUrl ? `<a href="${discogsUrl}">` : ''}<img src="${coverImage}" alt="${escapeHtml(artist)} - ${escapeHtml(title)}" />${discogsUrl ? `</a>` : ''}` : ''}                        <div class="artist">${escapeHtml(artist)}</div>
+                        ${coverImage ? `<img src="${coverImage}" alt="${escapeHtml(artist)} - ${escapeHtml(title)}" />` : ''}
                         <div class="title">${escapeHtml(title)}</div>
+                        <div class="artist"><span class="artist-link" data-artist="${escapeHtml(artist)}" style="color: #06c; text-decoration: underline; cursor: pointer;">${escapeHtml(artist)}</span></div>
                         ${year ? `<div class="year">${escapeHtml(year)}</div>` : ''}
-                        <div class="rating-${releaseId}">Loading rating...</div>
+                        <div class="rating-${releaseId}">-</div>
                         ${genreLinks ? `<div class="genres">${genreLinks}</div>` : ''}
                     </div>
                 `;
@@ -246,123 +254,83 @@
 
             collectionDiv.innerHTML = headerHTML + `<div id="releases-grid">${releasesHTML}</div>`;
 
-            // Fetch ratings asynchronously for all releases with rate limiting
-            // Process in batches to avoid overwhelming the API
-            const batchSize = 5;
-            for (let i = 0; i < releases.length; i += batchSize) {
-                const batch = releases.slice(i, i + batchSize);
-                await Promise.all(batch.map(async (release) => {
-                    const basicInfo = release.basic_information || {};
-                    const releaseId = basicInfo.id;
-                    if (releaseId) {
-                        const rating = await fetchRating(releaseId);
-                        const ratingElement = document.querySelector(`.rating-${releaseId}`);
-                        if (ratingElement) {
-                            let ratingDisplay = 'No rating';
-                            if (rating) {
-                                // If it's a whole number, don't show decimal
-                                const rounded = rating.toFixed(1);
-                                const formatted = rounded.endsWith('.0') ? rounded.slice(0, -2) : rounded;
-                                ratingDisplay = `Rating: ${formatted}/5`;
-                            }
-                            ratingElement.textContent = ratingDisplay;
+            // Display ratings from cached data
+            releases.forEach((release) => {
+                const basicInfo = release.basic_information || {};
+                const releaseId = basicInfo.id;
+                if (releaseId) {
+                    const rating = getRating(release);
+                    const ratingElement = document.querySelector(`.rating-${releaseId}`);
+                    if (ratingElement) {
+                        let ratingDisplay = 'No rating';
+                        if (rating !== null && rating !== undefined && rating > 0) {
+                            // If it's a whole number, don't show decimal
+                            const rounded = rating.toFixed(1);
+                            const formatted = rounded.endsWith('.0') ? rounded.slice(0, -2) : rounded;
+                            ratingDisplay = `Rating: ${formatted}/5`;
                         }
+                        ratingElement.textContent = ratingDisplay;
                     }
-                }));
-                // Small delay between batches to respect rate limits
-                if (i + batchSize < releases.length) {
-                    await new Promise(resolve => setTimeout(resolve, 100));
                 }
-            }
+            });
         }
 
         async function loadCachedCollection() {
-            try {
-                const response = await fetch('/data/collection.json');
-                if (!response.ok) return null;
-                const data = await response.json();
-                if (data && data.releases && Array.isArray(data.releases)) {
-                    return data;
+            // Try multiple paths to handle different hosting scenarios
+            const paths = [
+                'data/collection.json',  // Relative path (GitHub Pages)
+                '/data/collection.json', // Absolute path (local server)
+                './data/collection.json' // Explicit relative (file://)
+            ];
+            
+            const errors = [];
+            for (const path of paths) {
+                try {
+                    console.log(`Attempting to load from: ${path}`);
+                    const response = await fetch(path);
+                    console.log(`Response status for ${path}:`, response.status, response.statusText);
+                    console.log(`Response headers:`, Object.fromEntries(response.headers.entries()));
+                    
+                    if (response.ok) {
+                        const text = await response.text();
+                        console.log(`Response text length: ${text.length} characters`);
+                        console.log(`First 200 chars:`, text.substring(0, 200));
+                        
+                        try {
+                            const data = JSON.parse(text);
+                            console.log(`Parsed JSON successfully. Keys:`, Object.keys(data));
+                            if (data && data.releases && Array.isArray(data.releases)) {
+                                console.log(`Successfully loaded ${data.releases.length} releases from ${path}`);
+                                return data;
+                            } else {
+                                console.warn(`Data loaded from ${path} but invalid format. Data structure:`, data);
+                                errors.push(`${path}: Invalid data structure - missing releases array`);
+                            }
+                        } catch (parseErr) {
+                            console.error(`Failed to parse JSON from ${path}:`, parseErr);
+                            errors.push(`${path}: JSON parse error - ${parseErr.message}`);
+                        }
+                    } else {
+                        const errorText = await response.text().catch(() => '');
+                        errors.push(`${path}: ${response.status} ${response.statusText} - ${errorText.substring(0, 100)}`);
+                    }
+                } catch (err) {
+                    errors.push(`${path}: ${err.message}`);
+                    console.error(`Error loading ${path}:`, err);
                 }
-            } catch (err) {
-                console.log('Cached data not available, will fetch from API');
             }
+            
+            // If all paths failed, log for debugging
+            console.error('Failed to load collection.json from all attempted paths:', paths);
+            console.error('Errors:', errors);
+            console.error('Current URL:', window.location.href);
+            console.error('Protocol:', window.location.protocol);
             return null;
         }
 
+        // API fetching is disabled; function retained for compatibility, but always throws
         async function fetchCollectionFromAPI() {
-            // Only works on localhost via server proxy
-            if (!IS_LOCALHOST) {
-                throw new Error('API calls only available on localhost. Use cached data on GitHub Pages.');
-            }
-            
-            const collectionDiv = document.getElementById('collection');
-            
-            function updateStatus(message) {
-                const statusDiv = collectionDiv.querySelector('div');
-                if (statusDiv) {
-                    statusDiv.textContent = message;
-                }
-            }
-
-            // Get username from server (no credentials in frontend)
-            const userInfoResponse = await fetch('/api/user-info');
-            const userInfo = await userInfoResponse.json();
-            const username = userInfo.username;
-
-            updateStatus('Fetching collection folders...');
-            const foldersData = await discogsFetch(`/users/${username}/collection/folders`, 'Folders', 3, updateStatus);
-            
-            // Add delay after folders request to respect rate limits
-            await new Promise(resolve => setTimeout(resolve, 1200));
-            
-            const folders = foldersData.folders || [];
-            const allFolder = folders.find(f => f.id === 0) || folders[0];
-            if (!allFolder) {
-                throw new Error('No collection folders found.');
-            }
-
-            // Fetch first page to get pagination info
-            updateStatus('Fetching collection data (page 1)...');
-            const firstPageData = await discogsFetch(
-                `/users/${username}/collection/folders/${allFolder.id}/releases?per_page=100&page=1`,
-                'Collection page 1',
-                3,
-                updateStatus
-            );
-            
-            // Add delay after first page request
-            await new Promise(resolve => setTimeout(resolve, 1200));
-            const pagination = firstPageData.pagination || {};
-            const totalPages = pagination.pages || 1;
-            totalItems = pagination.items || 0;
-
-            // Collect all releases from first page
-            let allReleases = firstPageData.releases || [];
-
-            // Fetch remaining pages with rate limiting
-            // Discogs API allows ~60 requests per minute, so add delay between requests
-            for (let page = 2; page <= totalPages; page++) {
-                updateStatus(`Fetching collection data (page ${page}/${totalPages})...`);
-                const pageData = await discogsFetch(
-                    `/users/${username}/collection/folders/${allFolder.id}/releases?per_page=100&page=${page}`,
-                    `Collection page ${page}`,
-                    3,
-                    updateStatus
-                );
-                allReleases = allReleases.concat(pageData.releases || []);
-                
-                // Add delay between requests to respect rate limits (1.2 seconds = ~50 requests/min)
-                if (page < totalPages) {
-                    await new Promise(resolve => setTimeout(resolve, 1200));
-                }
-            }
-
-            return {
-                pagination: pagination,
-                releases: allReleases,
-                lastUpdated: new Date().toISOString()
-            };
+            throw new Error('API calls are disabled. Only cached data is available.');
         }
 
         async function fetchCollection() {
@@ -379,10 +347,9 @@
             }
 
             try {
-                // Try to load from cached data first
+                // Always load from cached data
                 updateStatus('Loading cached collection data...');
                 const cachedData = await loadCachedCollection();
-                
                 if (cachedData && cachedData.releases && cachedData.releases.length > 0) {
                     allReleases = cachedData.releases;
                     totalItems = cachedData.pagination?.items || cachedData.releases.length;
@@ -391,24 +358,21 @@
                     updateStatus(`Loaded ${allReleases.length} albums from cache (updated: ${lastUpdatedDisplay})`);
                     await new Promise(resolve => setTimeout(resolve, 500)); // Brief pause to show message
                 } else {
-                    // Fall back to API only on localhost (via server proxy)
-                    if (IS_LOCALHOST) {
-                        updateStatus('Cached data not available, fetching from API...');
-                        const apiData = await fetchCollectionFromAPI();
-                        allReleases = apiData.releases;
-                        totalItems = apiData.pagination?.items || apiData.releases.length;
-                        lastUpdated = apiData.lastUpdated || new Date().toISOString();
-                        updateStatus('Fetched from API successfully');
+                    const protocol = window.location.protocol;
+                    const currentUrl = window.location.href;
+                    let errorMsg = 'Cached collection data not available. ';
+                    errorMsg += `(Current URL: ${currentUrl}) `;
+                    if (protocol === 'file:') {
+                        errorMsg += 'You are opening the HTML file directly. Please run `node server.js` and access the page via http://localhost:3000';
+                    } else if (currentUrl.includes('localhost') || currentUrl.includes('127.0.0.1')) {
+                        errorMsg += 'Make sure `node server.js` is running. Check the browser console (F12) for detailed error messages.';
                     } else {
-                        // On GitHub Pages, require cached data
-                        throw new Error('Cached collection data not available. The GitHub Actions workflow should create /data/collection.json. Please check if the workflow has run successfully.');
+                        errorMsg += 'The GitHub Actions workflow should create data/collection.json. Please check if the workflow has run successfully. Check the browser console (F12) for detailed error messages.';
                     }
+                    throw new Error(errorMsg);
                 }
-                
                 updateStatus('Displaying collection...');
-
                 await applySearchFilter();
-
             } catch (error) {
                 collectionDiv.innerHTML = `<div style="color: red;">Error: ${error.message}</div>`;
             }
@@ -419,7 +383,7 @@
             const clearLink = document.getElementById('clear-link');
             const collectionDiv = document.getElementById('collection');
             function updateClearVisibility() {
-                clearLink.style.display = searchInput.value.trim() ? 'inline' : 'none';
+                clearLink.style.display = searchInput.value.trim() ? 'flex' : 'none';
             }
             searchInput.addEventListener('input', () => {
                 searchQuery = searchInput.value;
@@ -433,15 +397,35 @@
                 applySearchFilter();
             });
             collectionDiv.addEventListener('click', (e) => {
-                const link = e.target.closest('.genre-link');
-                if (!link) return;
-                const genre = link.getAttribute('data-genre');
-                if (genre != null) {
-                    searchInput.value = genre;
-                    searchQuery = genre;
-                    updateClearVisibility();
-                    applySearchFilter();
+                // Handle genre link clicks
+                const genreLink = e.target.closest('.genre-link');
+                if (genreLink) {
+                    e.preventDefault();
+                    const genre = genreLink.getAttribute('data-genre');
+                    if (genre != null) {
+                        searchInput.value = genre;
+                        searchQuery = genre;
+                        updateClearVisibility();
+                        applySearchFilter();
+                    }
+                    return;
                 }
+                
+                // Handle artist link clicks
+                const artistLink = e.target.closest('.artist-link');
+                if (artistLink) {
+                    e.preventDefault();
+                    const artist = artistLink.getAttribute('data-artist');
+                    if (artist != null) {
+                        searchInput.value = artist;
+                        searchQuery = artist;
+                        updateClearVisibility();
+                        applySearchFilter();
+                    }
+                    return;
+                }
+                
+                // Don't prevent default for other clicks (like album cover links)
             });
             fetchCollection();
         });
