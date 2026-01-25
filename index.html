@@ -87,6 +87,26 @@
         #clear-link:hover {
             color: #000;
         }
+        #header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #header-container h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: 600;
+        }
+        #lucky-link {
+            color: #06c;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        #lucky-link:hover {
+            text-decoration: underline;
+        }
         @media (max-width: 1100px) {
             body {
                 margin: 16px;
@@ -126,12 +146,15 @@
     </style>
 </head>
 <body>
-    <h1 style="margin-bottom: 20px; font-size: 2em; font-weight: 600;">Justcogs</h1>
+    <div id="header-container">
+        <h1>Justcogs</h1>
+        <a id="lucky-link" href="#">Surprise me!</a>
+    </div>
+    <div id="last-sync" style="margin-bottom: 12px; font-size: 0.9em; color: #666;"></div>
     <div id="search-container">
         <input type="text" id="search-input" placeholder="Search..." />
         <span id="clear-link">×</span>
     </div>
-    <div id="last-sync" style="margin-bottom: 20px; font-size: 0.9em; color: #666;"></div>
     <div id="collection"></div>
 
     <script>
@@ -218,16 +241,17 @@
             const collectionDiv = document.getElementById('collection');
             const lastSyncDiv = document.getElementById('last-sync');
             
-            // Update last API sync timestamp
+            // Update last API sync timestamp with album count
+            const albumCount = allReleases.length;
             if (lastUpdated) {
                 const timestampText = formatTimestamp(lastUpdated);
                 if (timestampText) {
-                    lastSyncDiv.textContent = `Last sync: ${timestampText}`;
+                    lastSyncDiv.textContent = `${albumCount} album${albumCount !== 1 ? 's' : ''}. Last sync: ${timestampText}`;
                 } else {
-                    lastSyncDiv.textContent = '';
+                    lastSyncDiv.textContent = `${albumCount} album${albumCount !== 1 ? 's' : ''}`;
                 }
             } else {
-                lastSyncDiv.textContent = '';
+                lastSyncDiv.textContent = `${albumCount} album${albumCount !== 1 ? 's' : ''}`;
             }
             
             // No header HTML needed (removed "Your Collection" line)
@@ -340,28 +364,16 @@
 
         async function fetchCollection() {
             const collectionDiv = document.getElementById('collection');
-            let statusMessage = 'Loading your collection...';
-            collectionDiv.innerHTML = `<div style="margin-bottom: 20px; font-size: 0.9em; color: #666;">${statusMessage}</div>`;
-
-            function updateStatus(message) {
-                statusMessage = message;
-                const statusDiv = collectionDiv.querySelector('div');
-                if (statusDiv) {
-                    statusDiv.textContent = message;
-                }
-            }
+            const lastSyncDiv = document.getElementById('last-sync');
+            lastSyncDiv.textContent = 'Loading...';
 
             try {
                 // Always load from cached data
-                updateStatus('Loading cached collection data...');
                 const cachedData = await loadCachedCollection();
                 if (cachedData && cachedData.releases && cachedData.releases.length > 0) {
                     allReleases = cachedData.releases;
                     totalItems = cachedData.pagination?.items || cachedData.releases.length;
                     lastUpdated = cachedData.lastUpdated || null;
-                    const lastUpdatedDisplay = lastUpdated ? new Date(lastUpdated).toLocaleString() : 'unknown';
-                    updateStatus(`Loaded ${allReleases.length} albums from cache (updated: ${lastUpdatedDisplay})`);
-                    await new Promise(resolve => setTimeout(resolve, 500)); // Brief pause to show message
                 } else {
                     const protocol = window.location.protocol;
                     const currentUrl = window.location.href;
@@ -376,7 +388,6 @@
                     }
                     throw new Error(errorMsg);
                 }
-                updateStatus('Displaying collection...');
                 await applySearchFilter();
             } catch (error) {
                 collectionDiv.innerHTML = `<div style="color: red;">Error: ${error.message}</div>`;
@@ -432,6 +443,34 @@
                 
                 // Don't prevent default for other clicks (like album cover links)
             });
+            
+            // Handle "Surprise me!" click
+            const luckyLink = document.getElementById('lucky-link');
+            luckyLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (allReleases.length === 0) {
+                    return;
+                }
+                
+                // Get a random release
+                const randomIndex = Math.floor(Math.random() * allReleases.length);
+                const randomRelease = allReleases[randomIndex];
+                const albumTitle = randomRelease.basic_information?.title || '';
+                
+                if (albumTitle) {
+                    // Set the search input to the album title
+                    searchInput.value = albumTitle;
+                    searchQuery = albumTitle;
+                    updateClearVisibility();
+                    
+                    // Apply the search filter to show only this album
+                    applySearchFilter();
+                    
+                    // Scroll to top to see the result
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            
             fetchCollection();
         });
     </script>
