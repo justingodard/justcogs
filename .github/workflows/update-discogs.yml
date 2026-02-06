@@ -2,9 +2,8 @@ name: Update Discogs Collection
 
 on:
   schedule:
-    # Run every 12 hours
-    - cron: '0 */12 * * *' # runs every 12 hours
-  # workflow_dispatch: # allows manual trigger
+    - cron: '0 0 * * *' # runs once daily at midnight UTC
+  workflow_dispatch: # allows manual trigger from GitHub Actions UI
 
 jobs:
   update:
