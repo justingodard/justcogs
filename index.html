@@ -6,10 +6,10 @@
     <title>Justcogs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400;1,600&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <style>
         * {
-            font-family: 'Inter', sans-serif;
+            font-family: 'IBM Plex Mono', sans-serif;
         }
         body {
             margin: 24px;
@@ -23,7 +23,7 @@
         .release-card {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 4px;
         }
         .release-card img {
             width: 100%;
@@ -38,22 +38,32 @@
         }
         .release-card .artist {
             font-weight: 400;
+            margin-bottom: 8px;
         }
         .release-card .title {
             color: #333;
-            font-weight: 600;
+            font-weight: 400;
+            margin-top: 8px;
         }
         .release-card .year {
-            color: #666;
-            font-size: 0.85em;
+            color: #999;
+            font-size: 0.8em;
         }
         .release-card .genres {
             font-size: 0.8em;
-            margin-top: 4px;
+            margin-bottom: 16px;
+            margin-top: 8px;
+            
         }
         .release-card [class^="rating-"] {
-            color: #666;
-            font-size: 0.85em;
+            color: #999;
+            font-size: 0.8em;
+            display: flex;
+            gap: 2px;
+        }
+        .star-icon {
+            width: 14px;
+            height: 14px;
         }
         #search-container {
             position: relative;
@@ -119,8 +129,9 @@
             .release-card > div {
                 font-size: 0.88em;
             }
-            .release-card .year {
-                font-size: 0.82em;
+            .release-card .year,
+            .release-card [class^="rating-"] {
+                font-size: 0.76em;
             }
             .release-card .genres {
                 font-size: 0.76em;
@@ -137,8 +148,9 @@
             .release-card > div {
                 font-size: 0.85em;
             }
-            .release-card .year {
-                font-size: 0.8em;
+            .release-card .year,
+            .release-card [class^="rating-"] {
+                font-size: 0.75em;
             }
             .release-card .genres {
                 font-size: 0.75em;
@@ -147,6 +159,15 @@
     </style>
 </head>
 <body>
+    <!-- SVG definitions for star ratings -->
+    <svg style="width: 0; height: 0; position: absolute;" aria-hidden="true">
+        <defs>
+            <symbol viewBox="0 0 24 24" id="star">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </symbol>
+        </defs>
+    </svg>
+    
     <div id="header-container">
         <h1>Justcogs</h1>
         <a id="lucky-link" href="#">Surprise me!</a>
@@ -168,6 +189,60 @@
         function escapeHtml(s) {
             const t = String(s);
             return t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        function generateStarRating(rating, releaseId) {
+            // Round to nearest quarter (0.25 increments)
+            const roundedRating = Math.round(rating * 4) / 4;
+            
+            const fullStars = Math.floor(roundedRating);
+            const remainder = roundedRating - fullStars;
+            const emptyStars = 5 - Math.ceil(roundedRating);
+            
+            let starsHtml = '';
+            
+            // Full stars
+            for (let i = 0; i < fullStars; i++) {
+                starsHtml += `<svg class="star-icon" viewBox="0 0 24 24"><use href="#star" fill="#000"></use></svg>`;
+            }
+            
+            // Partial star (if needed)
+            if (remainder > 0) {
+                const gradientId = `gradient-${releaseId}`;
+                const percentage = Math.round(remainder * 100);
+                
+                // Add gradient definition to the existing SVG defs
+                const svgDefs = document.querySelector('svg defs');
+                if (svgDefs && !document.getElementById(gradientId)) {
+                    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+                    gradient.setAttribute('id', gradientId);
+                    gradient.setAttribute('x1', '0');
+                    gradient.setAttribute('x2', '100%');
+                    gradient.setAttribute('y1', '0');
+                    gradient.setAttribute('y2', '0');
+                    
+                    const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+                    stop1.setAttribute('offset', `${percentage}%`);
+                    stop1.setAttribute('stop-color', '#000');
+                    
+                    const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+                    stop2.setAttribute('offset', `${percentage}%`);
+                    stop2.setAttribute('stop-color', '#d1d5db');
+                    
+                    gradient.appendChild(stop1);
+                    gradient.appendChild(stop2);
+                    svgDefs.appendChild(gradient);
+                }
+                
+                starsHtml += `<svg class="star-icon" viewBox="0 0 24 24"><use href="#star" fill="url(#${gradientId})"></use></svg>`;
+            }
+            
+            // Empty stars
+            for (let i = 0; i < emptyStars; i++) {
+                starsHtml += `<svg class="star-icon" viewBox="0 0 24 24"><use href="#star" fill="#d1d5db"></use></svg>`;
+            }
+            
+            return starsHtml;
         }
 
         function getReleaseGenres(release) {
@@ -264,18 +339,23 @@
                 const artist = basicInfo.artists?.[0]?.name || '';
                 const title = basicInfo.title || '';
                 const year = basicInfo.year || '';
+                const label = basicInfo.labels?.[0]?.name || '';
                 const coverImage = basicInfo.cover_image || basicInfo.thumb || '';
                 const releaseId = basicInfo.id;
                 const discogsUrl = releaseId ? `https://www.discogs.com/release/${releaseId}` : '';
                 const genres = getReleaseGenres(release);
                 const genreLinks = genres.map((g) => `<span class="genre-link" data-genre="${escapeHtml(g)}" style="color: #06c; text-decoration: underline; cursor: pointer;">${escapeHtml(g)}</span>`).join(', ');
+                
+                // Format label • year line
+                const yearDisplay = year && year > 0 ? escapeHtml(year) : 'Unknown';
+                const labelYearLine = label ? `${escapeHtml(label)} • ${yearDisplay}` : yearDisplay;
 
                 return `
                     <div id="release-${releaseId}" data-release-id="${releaseId}" class="release-card">
                         ${coverImage ? `<img src="${coverImage}" alt="${escapeHtml(artist)} - ${escapeHtml(title)}" />` : ''}
                         <div class="title">${escapeHtml(title)}</div>
                         <div class="artist"><span class="artist-link" data-artist="${escapeHtml(artist)}" style="color: #06c; text-decoration: underline; cursor: pointer;">${escapeHtml(artist)}</span></div>
-                        ${year ? `<div class="year">${escapeHtml(year)}</div>` : ''}
+                        <div class="year">${labelYearLine}</div>
                         <div class="rating-${releaseId}">-</div>
                         ${genreLinks ? `<div class="genres">${genreLinks}</div>` : ''}
                     </div>
@@ -292,14 +372,11 @@
                     const rating = getRating(release);
                     const ratingElement = document.querySelector(`.rating-${releaseId}`);
                     if (ratingElement) {
-                        let ratingDisplay = 'No rating';
                         if (rating !== null && rating !== undefined && rating > 0) {
-                            // If it's a whole number, don't show decimal
-                            const rounded = rating.toFixed(1);
-                            const formatted = rounded.endsWith('.0') ? rounded.slice(0, -2) : rounded;
-                            ratingDisplay = `Rating: ${formatted}/5`;
+                            ratingElement.innerHTML = generateStarRating(rating, releaseId);
+                        } else {
+                            ratingElement.textContent = 'No rating';
                         }
-                        ratingElement.textContent = ratingDisplay;
                     }
                 }
             });
