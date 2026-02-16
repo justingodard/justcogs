@@ -1033,7 +1033,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.44
+      "community_rating": 4.43
     },
     {
       "id": 2971779,
@@ -1200,7 +1200,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.13
+      "community_rating": 4.12
     },
     {
       "id": 1309862,
@@ -1457,7 +1457,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": null
+      "community_rating": 4.73
     },
     {
       "id": 5702478,
@@ -2450,7 +2450,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.27
+      "community_rating": null
     },
     {
       "id": 2681495,
@@ -4284,7 +4284,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.5
+      "community_rating": 4.51
     },
     {
       "id": 13286331,
@@ -5197,5 +5197,5 @@
       "community_rating": 4.45
     }
   ],
-  "lastUpdated": "2026-02-15T02:31:38.770Z"
+  "lastUpdated": "2026-02-16T02:27:58.432Z"
 }
