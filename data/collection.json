@@ -3619,7 +3619,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.45
+      "community_rating": 4.44
     },
     {
       "id": 13552836,
@@ -3631,8 +3631,8 @@
         "master_id": 38776,
         "master_url": "https://api.discogs.com/masters/38776",
         "resource_url": "https://api.discogs.com/releases/13552836",
-        "thumb": "https://i.discogs.com/HUXKfh4GAEatgrX6OePuMvjI4w9OLq7rCg_Mg82Uhi4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNTUy/ODM2LTE2NDQxNDk2/NDEtODM4OS5qcGVn.jpeg",
-        "cover_image": "https://i.discogs.com/0RwbFkhFsRb6qNlIqNCR2EjpmrsBOlb8NFwI431feKg/rs:fit/g:sm/q:90/h:576/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNTUy/ODM2LTE2NDQxNDk2/NDEtODM4OS5qcGVn.jpeg",
+        "thumb": "https://i.discogs.com/iftwyadP6QIw60zTzUo5rtT-qqQV6pdpK4dUD55eHPw/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNTUy/ODM2LTE1NTYzODUx/OTEtNzMxMS5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/mP5WM7tZOnzt_BPp-w8R7ZqlhIZgolR2eW4ixTXd1to/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNTUy/ODM2LTE1NTYzODUx/OTEtNzMxMS5qcGVn.jpeg",
         "title": "Fleetwood Mac",
         "year": 1975,
         "formats": [
@@ -5197,5 +5197,5 @@
       "community_rating": 4.45
     }
   ],
-  "lastUpdated": "2026-03-02T02:24:10.330Z"
+  "lastUpdated": "2026-03-03T02:26:03.373Z"
 }
