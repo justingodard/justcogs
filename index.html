@@ -6,7 +6,7 @@
     <title>Justcogs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400;1,600&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     <style>
         * {
             font-family: 'IBM Plex Mono', sans-serif;
@@ -169,7 +169,7 @@
     </svg>
     
     <div id="header-container">
-        <h1>Justcogs</h1>
+        <h1 id="site-title" style="cursor:pointer;">Justcogs</h1>
         <a id="lucky-link" href="#">Surprise me!</a>
     </div>
     <div id="last-sync" style="margin-bottom: 12px; font-size: 0.9em; color: #666;"></div>
@@ -185,6 +185,21 @@
         let totalItems = 0;
         let searchQuery = '';
         let lastUpdated = null; // Store last update timestamp
+
+        function updateUrlQuery(q) {
+            const url = new URL(window.location);
+            if (q && q.trim() !== '') {
+                url.searchParams.set('q', q);
+            } else {
+                url.searchParams.delete('q');
+            }
+            window.history.replaceState({}, '', url);
+        }
+
+        function getInitialQueryFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('q') || '';
+        }
 
         function escapeHtml(s) {
             const t = String(s);
@@ -262,6 +277,7 @@
 
         async function applySearchFilter() {
             const q = searchQuery.trim().toLowerCase();
+            updateUrlQuery(searchQuery);
             const filtered = q === '' ? allReleases : allReleases.filter((r) => releaseMatchesSearch(r, q));
             // Sort by album name (title)
             const sorted = [...filtered].sort((a, b) => {
@@ -476,6 +492,13 @@
             const searchInput = document.getElementById('search-input');
             const clearLink = document.getElementById('clear-link');
             const collectionDiv = document.getElementById('collection');
+            const siteTitle = document.getElementById('site-title');
+            // Load search query from URL if present
+            const initialQuery = getInitialQueryFromUrl();
+            if (initialQuery) {
+                searchInput.value = initialQuery;
+                searchQuery = initialQuery;
+            }
             function updateClearVisibility() {
                 clearLink.style.display = searchInput.value.trim() ? 'flex' : 'none';
             }
@@ -489,6 +512,15 @@
                 searchQuery = '';
                 updateClearVisibility();
                 applySearchFilter();
+            });
+
+            // Clicking the site title clears the search filter and URL
+            siteTitle.addEventListener('click', () => {
+                searchInput.value = '';
+                searchQuery = '';
+                updateClearVisibility();
+                applySearchFilter();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             collectionDiv.addEventListener('click', (e) => {
                 // Handle genre link clicks
@@ -549,7 +581,12 @@
                 }
             });
             
-            fetchCollection();
+            fetchCollection().then(() => {
+                updateClearVisibility();
+                if (searchQuery) {
+                    applySearchFilter();
+                }
+            });
         });
     </script>
 </body>
