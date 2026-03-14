@@ -2562,7 +2562,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.21
+      "community_rating": 4.22
     },
     {
       "id": 378895,
@@ -4068,7 +4068,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.21
+      "community_rating": 4.22
     },
     {
       "id": 412038,
@@ -4942,7 +4942,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.38
+      "community_rating": 4.37
     },
     {
       "id": 3536289,
@@ -5197,5 +5197,5 @@
       "community_rating": 4.45
     }
   ],
-  "lastUpdated": "2026-03-13T02:14:43.494Z"
+  "lastUpdated": "2026-03-14T02:12:35.984Z"
 }
