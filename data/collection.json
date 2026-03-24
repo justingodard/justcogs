@@ -3,7 +3,7 @@
     "page": 1,
     "pages": 1,
     "per_page": 100,
-    "items": 82,
+    "items": 83,
     "urls": {}
   },
   "releases": [
@@ -455,7 +455,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.65
+      "community_rating": 4.66
     },
     {
       "id": 3562502,
@@ -1884,7 +1884,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.49
+      "community_rating": 4.5
     },
     {
       "id": 667414,
@@ -3438,6 +3438,68 @@
       },
       "folder_id": 1,
       "community_rating": 4.49
+    },
+    {
+      "id": 12905639,
+      "instance_id": 2127140474,
+      "date_added": "2026-03-23T02:51:13-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 12905639,
+        "master_id": 60877,
+        "master_url": "https://api.discogs.com/masters/60877",
+        "resource_url": "https://api.discogs.com/releases/12905639",
+        "thumb": "https://i.discogs.com/P0HoaePuCFRsN95_rLPJEtSHFA5-3qdrfMw1KSkhCrE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyOTA1/NjM5LTE1NDQyNDc5/NzItMTAzMi5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/bcSlVBlniz-OJ9qWBnMXWD9XxX272Zo2v2aW48F_g_Q/rs:fit/g:sm/q:90/h:600/w:593/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyOTA1/NjM5LTE1NDQyNDc5/NzItMTAzMi5qcGVn.jpeg",
+        "title": "Odessey And Oracle",
+        "year": 2015,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "1/2 Speed Mastered",
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Repress",
+              "Special Edition",
+              "Mono"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Repertoire Records",
+            "catno": "V 102 M",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 4756,
+            "resource_url": "https://api.discogs.com/labels/4756"
+          }
+        ],
+        "artists": [
+          {
+            "name": "The Zombies",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 262221,
+            "resource_url": "https://api.discogs.com/artists/262221"
+          }
+        ],
+        "genres": [
+          "Rock",
+          "Pop"
+        ],
+        "styles": [
+          "Psychedelic Rock",
+          "Pop Rock"
+        ]
+      },
+      "folder_id": 1,
+      "community_rating": 4.53
     },
     {
       "id": 9562941,
@@ -5197,5 +5259,5 @@
       "community_rating": 4.45
     }
   ],
-  "lastUpdated": "2026-03-23T02:31:21.814Z"
+  "lastUpdated": "2026-03-24T02:23:54.867Z"
 }
