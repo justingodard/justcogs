@@ -1318,7 +1318,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.24
+      "community_rating": 4.25
     },
     {
       "id": 877385,
@@ -1826,7 +1826,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4
+      "community_rating": 4.03
     },
     {
       "id": 3169563,
@@ -2620,7 +2620,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.5
+      "community_rating": 4.51
     },
     {
       "id": 1580307,
@@ -3737,7 +3737,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.27
+      "community_rating": 4.26
     },
     {
       "id": 1568483,
@@ -3882,7 +3882,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.63
+      "community_rating": 4.64
     },
     {
       "id": 3030024,
@@ -5259,5 +5259,5 @@
       "community_rating": 4.45
     }
   ],
-  "lastUpdated": "2026-03-29T02:39:32.168Z"
+  "lastUpdated": "2026-03-30T02:42:30.703Z"
 }
