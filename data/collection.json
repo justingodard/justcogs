@@ -66,13 +66,13 @@
         ],
         "artists": [
           {
-            "name": "Deerhunter",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 724296,
-            "resource_url": "https://api.discogs.com/artists/724296"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -125,22 +125,22 @@
         ],
         "artists": [
           {
-            "name": "John Lennon",
+            "name": "",
             "anv": "",
             "join": "/",
             "role": "",
             "tracks": "",
-            "id": 46481,
-            "resource_url": "https://api.discogs.com/artists/46481"
+            "id": null,
+            "resource_url": null
           },
           {
-            "name": "The Plastic Ono Band",
+            "name": "",
             "anv": "Plastic Ono Band",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 256190,
-            "resource_url": "https://api.discogs.com/artists/256190"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -188,13 +188,13 @@
         ],
         "artists": [
           {
-            "name": "Roland Kirk",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 218045,
-            "resource_url": "https://api.discogs.com/artists/218045"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -245,13 +245,13 @@
         ],
         "artists": [
           {
-            "name": "Billy Cobham",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 35199,
-            "resource_url": "https://api.discogs.com/artists/35199"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -304,13 +304,13 @@
         ],
         "artists": [
           {
-            "name": "James Blake",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 1500084,
-            "resource_url": "https://api.discogs.com/artists/1500084"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -363,13 +363,13 @@
         ],
         "artists": [
           {
-            "name": "Lou Donaldson",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 29958,
-            "resource_url": "https://api.discogs.com/artists/29958"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -438,13 +438,13 @@
         ],
         "artists": [
           {
-            "name": "John Coltrane",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 97545,
-            "resource_url": "https://api.discogs.com/artists/97545"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -501,13 +501,13 @@
         ],
         "artists": [
           {
-            "name": "Clifton Chenier",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 483697,
-            "resource_url": "https://api.discogs.com/artists/483697"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -568,13 +568,13 @@
         ],
         "artists": [
           {
-            "name": "The Beach Boys",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 70829,
-            "resource_url": "https://api.discogs.com/artists/70829"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -635,13 +635,13 @@
         ],
         "artists": [
           {
-            "name": "The Band",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 254199,
-            "resource_url": "https://api.discogs.com/artists/254199"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -695,13 +695,13 @@
         ],
         "artists": [
           {
-            "name": "The Allman Brothers Band",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 110253,
-            "resource_url": "https://api.discogs.com/artists/110253"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -751,13 +751,13 @@
         ],
         "artists": [
           {
-            "name": "Beach House",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 592308,
-            "resource_url": "https://api.discogs.com/artists/592308"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -819,13 +819,13 @@
         ],
         "artists": [
           {
-            "name": "Simon & Garfunkel",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 232157,
-            "resource_url": "https://api.discogs.com/artists/232157"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -891,13 +891,13 @@
         ],
         "artists": [
           {
-            "name": "Bob Dylan",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 59792,
-            "resource_url": "https://api.discogs.com/artists/59792"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -957,13 +957,13 @@
         ],
         "artists": [
           {
-            "name": "Peter Gabriel",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 11136,
-            "resource_url": "https://api.discogs.com/artists/11136"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1016,13 +1016,13 @@
         ],
         "artists": [
           {
-            "name": "The Specials",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 27937,
-            "resource_url": "https://api.discogs.com/artists/27937"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1071,13 +1071,13 @@
         ],
         "artists": [
           {
-            "name": "Nicolas Jaar",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 1096231,
-            "resource_url": "https://api.discogs.com/artists/1096231"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1127,13 +1127,13 @@
         ],
         "artists": [
           {
-            "name": "Thelonious Monk",
+            "name": "",
             "anv": "Monk",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 145256,
-            "resource_url": "https://api.discogs.com/artists/145256"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1183,13 +1183,13 @@
         ],
         "artists": [
           {
-            "name": "Bruce Springsteen",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 219986,
-            "resource_url": "https://api.discogs.com/artists/219986"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1240,13 +1240,13 @@
         ],
         "artists": [
           {
-            "name": "Bob Dylan",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 59792,
-            "resource_url": "https://api.discogs.com/artists/59792"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1300,13 +1300,13 @@
         ],
         "artists": [
           {
-            "name": "Miles Davis",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 23755,
-            "resource_url": "https://api.discogs.com/artists/23755"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1365,13 +1365,13 @@
         ],
         "artists": [
           {
-            "name": "Weather Report",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 10082,
-            "resource_url": "https://api.discogs.com/artists/10082"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1440,13 +1440,13 @@
         ],
         "artists": [
           {
-            "name": "Miles Davis",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 23755,
-            "resource_url": "https://api.discogs.com/artists/23755"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1497,13 +1497,13 @@
         ],
         "artists": [
           {
-            "name": "Various",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 194,
-            "resource_url": "https://api.discogs.com/artists/194"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1566,13 +1566,13 @@
         ],
         "artists": [
           {
-            "name": "Eumir Deodato",
+            "name": "",
             "anv": "Deodato",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 83740,
-            "resource_url": "https://api.discogs.com/artists/83740"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1625,13 +1625,13 @@
         ],
         "artists": [
           {
-            "name": "Bing Crosby",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 164571,
-            "resource_url": "https://api.discogs.com/artists/164571"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1683,22 +1683,22 @@
         ],
         "artists": [
           {
-            "name": "John Mayall",
+            "name": "",
             "anv": "",
             "join": "With",
             "role": "",
             "tracks": "",
-            "id": 291340,
-            "resource_url": "https://api.discogs.com/artists/291340"
+            "id": null,
+            "resource_url": null
           },
           {
-            "name": "Eric Clapton",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 17827,
-            "resource_url": "https://api.discogs.com/artists/17827"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1752,13 +1752,13 @@
         ],
         "artists": [
           {
-            "name": "The Rolling Stones",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 20991,
-            "resource_url": "https://api.discogs.com/artists/20991"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1807,13 +1807,13 @@
         ],
         "artists": [
           {
-            "name": "Francis Lai",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 135912,
-            "resource_url": "https://api.discogs.com/artists/135912"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1865,13 +1865,13 @@
         ],
         "artists": [
           {
-            "name": "Real Estate (2)",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 1415073,
-            "resource_url": "https://api.discogs.com/artists/1415073"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1930,13 +1930,13 @@
         ],
         "artists": [
           {
-            "name": "Roxy Music",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 56621,
-            "resource_url": "https://api.discogs.com/artists/56621"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -1989,13 +1989,13 @@
         ],
         "artists": [
           {
-            "name": "The Doors",
+            "name": "",
             "anv": "Doors",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 56798,
-            "resource_url": "https://api.discogs.com/artists/56798"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2055,13 +2055,13 @@
         ],
         "artists": [
           {
-            "name": "Peter Tosh",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 88495,
-            "resource_url": "https://api.discogs.com/artists/88495"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2112,13 +2112,13 @@
         ],
         "artists": [
           {
-            "name": "Michael Jackson",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 15885,
-            "resource_url": "https://api.discogs.com/artists/15885"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2176,13 +2176,13 @@
         ],
         "artists": [
           {
-            "name": "Spiritualized",
+            "name": "",
             "anv": "Spiritualized®",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 3551,
-            "resource_url": "https://api.discogs.com/artists/3551"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2234,13 +2234,13 @@
         ],
         "artists": [
           {
-            "name": "Various",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 194,
-            "resource_url": "https://api.discogs.com/artists/194"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2295,13 +2295,13 @@
         ],
         "artists": [
           {
-            "name": "Matthew Dear",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 4016,
-            "resource_url": "https://api.discogs.com/artists/4016"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2361,13 +2361,13 @@
         ],
         "artists": [
           {
-            "name": "Various",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 194,
-            "resource_url": "https://api.discogs.com/artists/194"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2431,13 +2431,13 @@
         ],
         "artists": [
           {
-            "name": "Ornette Coleman",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 224506,
-            "resource_url": "https://api.discogs.com/artists/224506"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2490,13 +2490,13 @@
         ],
         "artists": [
           {
-            "name": "Jethro Tull",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 30122,
-            "resource_url": "https://api.discogs.com/artists/30122"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2545,13 +2545,13 @@
         ],
         "artists": [
           {
-            "name": "Bob Marley & The Wailers",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 21764,
-            "resource_url": "https://api.discogs.com/artists/21764"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2601,13 +2601,13 @@
         ],
         "artists": [
           {
-            "name": "Belle & Sebastian",
+            "name": "",
             "anv": "Belle And Sebastian",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 252864,
-            "resource_url": "https://api.discogs.com/artists/252864"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2658,13 +2658,13 @@
         ],
         "artists": [
           {
-            "name": "Echo & The Bunnymen",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 45115,
-            "resource_url": "https://api.discogs.com/artists/45115"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2714,13 +2714,13 @@
         ],
         "artists": [
           {
-            "name": "Grouper",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 688281,
-            "resource_url": "https://api.discogs.com/artists/688281"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2774,13 +2774,13 @@
         ],
         "artists": [
           {
-            "name": "Idris Muhammad",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 42195,
-            "resource_url": "https://api.discogs.com/artists/42195"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2792,7 +2792,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.6
+      "community_rating": 4.61
     },
     {
       "id": 10536536,
@@ -2840,13 +2840,13 @@
         ],
         "artists": [
           {
-            "name": "Canned Heat",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 269094,
-            "resource_url": "https://api.discogs.com/artists/269094"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2910,13 +2910,13 @@
         ],
         "artists": [
           {
-            "name": "My Bloody Valentine",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 6516,
-            "resource_url": "https://api.discogs.com/artists/6516"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -2973,13 +2973,13 @@
         ],
         "artists": [
           {
-            "name": "The Crusaders",
+            "name": "",
             "anv": "Crusaders",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 60450,
-            "resource_url": "https://api.discogs.com/artists/60450"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3028,13 +3028,13 @@
         ],
         "artists": [
           {
-            "name": "Oval",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 3548,
-            "resource_url": "https://api.discogs.com/artists/3548"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3085,13 +3085,13 @@
         ],
         "artists": [
           {
-            "name": "Various",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 194,
-            "resource_url": "https://api.discogs.com/artists/194"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3152,13 +3152,13 @@
         ],
         "artists": [
           {
-            "name": "Carole King",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 266352,
-            "resource_url": "https://api.discogs.com/artists/266352"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3211,13 +3211,13 @@
         ],
         "artists": [
           {
-            "name": "Radiohead",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 3840,
-            "resource_url": "https://api.discogs.com/artists/3840"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3286,13 +3286,13 @@
         ],
         "artists": [
           {
-            "name": "Bryan Ferry",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 87721,
-            "resource_url": "https://api.discogs.com/artists/87721"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3352,13 +3352,13 @@
         ],
         "artists": [
           {
-            "name": "James Blake",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 1500084,
-            "resource_url": "https://api.discogs.com/artists/1500084"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3418,13 +3418,13 @@
         ],
         "artists": [
           {
-            "name": "David Bowie",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 10263,
-            "resource_url": "https://api.discogs.com/artists/10263"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3480,13 +3480,13 @@
         ],
         "artists": [
           {
-            "name": "The Zombies",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 262221,
-            "resource_url": "https://api.discogs.com/artists/262221"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3539,22 +3539,22 @@
         ],
         "artists": [
           {
-            "name": "Neil Young",
+            "name": "",
             "anv": "",
             "join": "&",
             "role": "",
             "tracks": "",
-            "id": 138556,
-            "resource_url": "https://api.discogs.com/artists/138556"
+            "id": null,
+            "resource_url": null
           },
           {
-            "name": "Crazy Horse",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 268789,
-            "resource_url": "https://api.discogs.com/artists/268789"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3604,13 +3604,13 @@
         ],
         "artists": [
           {
-            "name": "Neil Young",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 138556,
-            "resource_url": "https://api.discogs.com/artists/138556"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3663,13 +3663,13 @@
         ],
         "artists": [
           {
-            "name": "Neil Young",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 138556,
-            "resource_url": "https://api.discogs.com/artists/138556"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3720,13 +3720,13 @@
         ],
         "artists": [
           {
-            "name": "Fleetwood Mac",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 47333,
-            "resource_url": "https://api.discogs.com/artists/47333"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3794,13 +3794,13 @@
         ],
         "artists": [
           {
-            "name": "The Beach Boys",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 70829,
-            "resource_url": "https://api.discogs.com/artists/70829"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3862,13 +3862,13 @@
         ],
         "artists": [
           {
-            "name": "The Beach Boys",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 70829,
-            "resource_url": "https://api.discogs.com/artists/70829"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3922,13 +3922,13 @@
         ],
         "artists": [
           {
-            "name": "The Rolling Stones",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 20991,
-            "resource_url": "https://api.discogs.com/artists/20991"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -3980,13 +3980,13 @@
         ],
         "artists": [
           {
-            "name": "Pantha Du Prince",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 77594,
-            "resource_url": "https://api.discogs.com/artists/77594"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4038,13 +4038,13 @@
         ],
         "artists": [
           {
-            "name": "Talking Heads",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 22854,
-            "resource_url": "https://api.discogs.com/artists/22854"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4112,13 +4112,13 @@
         ],
         "artists": [
           {
-            "name": "Talking Heads",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 22854,
-            "resource_url": "https://api.discogs.com/artists/22854"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4194,13 +4194,13 @@
         ],
         "artists": [
           {
-            "name": "AIR",
+            "name": "",
             "anv": "AIR French Band",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 2770,
-            "resource_url": "https://api.discogs.com/artists/2770"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4252,13 +4252,13 @@
         ],
         "artists": [
           {
-            "name": "Boardwalk",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 3450100,
-            "resource_url": "https://api.discogs.com/artists/3450100"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4328,13 +4328,13 @@
         ],
         "artists": [
           {
-            "name": "Beach House",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 592308,
-            "resource_url": "https://api.discogs.com/artists/592308"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4386,13 +4386,13 @@
         ],
         "artists": [
           {
-            "name": "Stevie Wonder",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 18956,
-            "resource_url": "https://api.discogs.com/artists/18956"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4457,13 +4457,13 @@
         ],
         "artists": [
           {
-            "name": "Stevie Wonder",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 18956,
-            "resource_url": "https://api.discogs.com/artists/18956"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4522,13 +4522,13 @@
         ],
         "artists": [
           {
-            "name": "Stevie Wonder",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 18956,
-            "resource_url": "https://api.discogs.com/artists/18956"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4588,13 +4588,13 @@
         ],
         "artists": [
           {
-            "name": "Stevie Wonder",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 18956,
-            "resource_url": "https://api.discogs.com/artists/18956"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4642,13 +4642,13 @@
         ],
         "artists": [
           {
-            "name": "Chicago Underground Duo",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 329809,
-            "resource_url": "https://api.discogs.com/artists/329809"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4723,13 +4723,13 @@
         ],
         "artists": [
           {
-            "name": "Radiohead",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 3840,
-            "resource_url": "https://api.discogs.com/artists/3840"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4789,13 +4789,13 @@
         ],
         "artists": [
           {
-            "name": "The Selecter",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 30117,
-            "resource_url": "https://api.discogs.com/artists/30117"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4846,22 +4846,22 @@
         ],
         "artists": [
           {
-            "name": "The Velvet Underground",
+            "name": "",
             "anv": "",
             "join": "&",
             "role": "",
             "tracks": "",
-            "id": 39766,
-            "resource_url": "https://api.discogs.com/artists/39766"
+            "id": null,
+            "resource_url": null
           },
           {
-            "name": "Nico (3)",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 158676,
-            "resource_url": "https://api.discogs.com/artists/158676"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4915,22 +4915,22 @@
         ],
         "artists": [
           {
-            "name": "Ella Fitzgerald",
+            "name": "",
             "anv": "",
             "join": "And",
             "role": "",
             "tracks": "",
-            "id": 31615,
-            "resource_url": "https://api.discogs.com/artists/31615"
+            "id": null,
+            "resource_url": null
           },
           {
-            "name": "Louis Armstrong",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 38201,
-            "resource_url": "https://api.discogs.com/artists/38201"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -4981,13 +4981,13 @@
         ],
         "artists": [
           {
-            "name": "Van Morrison",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 255411,
-            "resource_url": "https://api.discogs.com/artists/255411"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -5051,13 +5051,13 @@
         ],
         "artists": [
           {
-            "name": "Van Morrison",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 255411,
-            "resource_url": "https://api.discogs.com/artists/255411"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -5110,13 +5110,13 @@
         ],
         "artists": [
           {
-            "name": "Broadcast",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 955,
-            "resource_url": "https://api.discogs.com/artists/955"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -5171,13 +5171,13 @@
         ],
         "artists": [
           {
-            "name": "Broadcast",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 955,
-            "resource_url": "https://api.discogs.com/artists/955"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -5237,13 +5237,13 @@
         ],
         "artists": [
           {
-            "name": "Boards Of Canada",
+            "name": "",
             "anv": "",
             "join": "",
             "role": "",
             "tracks": "",
-            "id": 307,
-            "resource_url": "https://api.discogs.com/artists/307"
+            "id": null,
+            "resource_url": null
           }
         ],
         "genres": [
@@ -5259,5 +5259,5 @@
       "community_rating": 4.45
     }
   ],
-  "lastUpdated": "2026-03-31T02:36:36.904Z"
+  "lastUpdated": "2026-04-01T02:48:49.477Z"
 }
