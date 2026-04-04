@@ -3,7 +3,7 @@
     "page": 1,
     "pages": 1,
     "per_page": 100,
-    "items": 83,
+    "items": 85,
     "urls": {}
   },
   "releases": [
@@ -456,6 +456,219 @@
       },
       "folder_id": 1,
       "community_rating": 4.65
+    },
+    {
+      "id": 19865380,
+      "instance_id": 2131035953,
+      "date_added": "2026-04-03T10:31:21-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 19865380,
+        "master_id": 163276,
+        "master_url": "https://api.discogs.com/masters/163276",
+        "resource_url": "https://api.discogs.com/releases/19865380",
+        "thumb": "https://i.discogs.com/cMRXfWJi24y2UgNRMqVIrkPRw0odCeh_3W9blYSHTZ8/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5ODY1/MzgwLTE3NDczNDky/MjItNzI1Ni5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/JKbeoBXI9uikp9QnrzGxv3rIaVSHuKm95M7lhwCSnh4/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5ODY1/MzgwLTE3NDczNDky/MjItNzI1Ni5qcGVn.jpeg",
+        "title": "Idle Moments",
+        "year": 2021,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "180g",
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Stereo"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Blue Note",
+            "catno": "3579910",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "name": "UMe",
+            "catno": "3579910",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 68029,
+            "resource_url": "https://api.discogs.com/labels/68029"
+          },
+          {
+            "name": "Blue Note",
+            "catno": "84154",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "name": "Blue Note",
+            "catno": "ST-84154",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "name": "Blue Note",
+            "catno": "BST 84154",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "name": "UMe",
+            "catno": "602435799100",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 68029,
+            "resource_url": "https://api.discogs.com/labels/68029"
+          },
+          {
+            "name": "UMe",
+            "catno": "602435799100",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 68029,
+            "resource_url": "https://api.discogs.com/labels/68029"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Grant Green",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 12633,
+            "resource_url": "https://api.discogs.com/artists/12633"
+          }
+        ],
+        "genres": [
+          "Jazz"
+        ],
+        "styles": [
+          "Hard Bop",
+          "Modal"
+        ]
+      },
+      "folder_id": 1,
+      "community_rating": 4.69
+    },
+    {
+      "id": 16312236,
+      "instance_id": 2131036056,
+      "date_added": "2026-04-03T10:31:43-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 16312236,
+        "master_id": 192306,
+        "master_url": "https://api.discogs.com/masters/192306",
+        "resource_url": "https://api.discogs.com/releases/16312236",
+        "thumb": "https://i.discogs.com/JUJexGwQTzPvodny0zrVOVL9IPofjikDNGyTwHoehP8/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MzEy/MjM2LTE2MDcwMDI1/MjktMTEwNy5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/uSGmv4Iei47c3rsG9311y2xryzXZRUEfVxzMNKc1JR8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MzEy/MjM2LTE2MDcwMDI1/MjktMTEwNy5qcGVn.jpeg",
+        "title": "The Sidewinder",
+        "year": 2020,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "180g",
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Stereo"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Blue Note",
+            "catno": "0743886",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "name": "UMe",
+            "catno": "0743886",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 68029,
+            "resource_url": "https://api.discogs.com/labels/68029"
+          },
+          {
+            "name": "Blue Note",
+            "catno": "00602507438869",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "name": "UMe",
+            "catno": "00602507438869",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 68029,
+            "resource_url": "https://api.discogs.com/labels/68029"
+          },
+          {
+            "name": "Blue Note",
+            "catno": "84157",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "name": "Blue Note",
+            "catno": "ST-84157",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "name": "Blue Note",
+            "catno": "BST 84157",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "resource_url": "https://api.discogs.com/labels/281"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Lee Morgan",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 29976,
+            "resource_url": "https://api.discogs.com/artists/29976"
+          }
+        ],
+        "genres": [
+          "Jazz"
+        ],
+        "styles": [
+          "Hard Bop"
+        ]
+      },
+      "folder_id": 1,
+      "community_rating": 4.76
     },
     {
       "id": 3562502,
@@ -1884,7 +2097,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.5
+      "community_rating": 4.49
     },
     {
       "id": 667414,
@@ -3814,7 +4027,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 3.96
+      "community_rating": 3.97
     },
     {
       "id": 1963248,
@@ -5259,5 +5472,5 @@
       "community_rating": 4.45
     }
   ],
-  "lastUpdated": "2026-04-03T02:34:20.922Z"
+  "lastUpdated": "2026-04-04T02:26:52.640Z"
 }

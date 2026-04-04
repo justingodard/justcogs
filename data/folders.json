@@ -3,13 +3,13 @@
     {
       "id": 0,
       "name": "All",
-      "count": 83,
+      "count": 85,
       "resource_url": "https://api.discogs.com/users/justingodard/collection/folders/0"
     },
     {
       "id": 1,
       "name": "Uncategorized",
-      "count": 83,
+      "count": 85,
       "resource_url": "https://api.discogs.com/users/justingodard/collection/folders/1"
     }
   ]
