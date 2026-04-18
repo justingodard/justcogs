@@ -867,7 +867,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.36
+      "community_rating": 4.37
     },
     {
       "id": 2379908,
@@ -2409,7 +2409,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.68
+      "community_rating": 4.69
     },
     {
       "id": 3120974,
@@ -2776,7 +2776,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.25
+      "community_rating": 4.24
     },
     {
       "id": 378895,
@@ -5089,7 +5089,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.57
+      "community_rating": 4.58
     },
     {
       "id": 4785939,
@@ -5473,5 +5473,5 @@
       "community_rating": 4.45
     }
   ],
-  "lastUpdated": "2026-04-17T02:46:40.976Z"
+  "lastUpdated": "2026-04-18T02:37:14.043Z"
 }
