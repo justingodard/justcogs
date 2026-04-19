@@ -1,10 +1,12 @@
 // scripts/fetchDiscogs.js
 const fs = require('fs');
 
-const DISCOGS_TOKEN = process.env.DISCOGS_TOKEN; // set in GitHub secrets
-const USERNAME = process.env.DISCOGS_USERNAME || 'justingodard'; // from GitHub secrets or default
-const OUTPUT_DIR = './data'; // folder in your repo
+const DISCOGS_TOKEN = process.env.DISCOGS_TOKEN;
+const USERNAME = process.env.DISCOGS_USERNAME || 'justingodard';
+const LASTFM_API_KEY = process.env.LASTFM_API_KEY;
+const OUTPUT_DIR = './data';
 const DISCOGS_API = 'https://api.discogs.com';
+const LASTFM_API = 'https://ws.audioscrobbler.com/2.0';
 
 if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
@@ -40,6 +42,25 @@ async function fetchJson(url, retries = 3) {
         return response.json();
     }
     throw new Error(`Failed after ${retries} attempts`);
+}
+
+async function fetchLastfmWiki(artist, album) {
+    if (!LASTFM_API_KEY) return null;
+    try {
+        const url = `${LASTFM_API}?method=album.getInfo&api_key=${LASTFM_API_KEY}&artist=${encodeURIComponent(artist)}&album=${encodeURIComponent(album)}&format=json`;
+        const response = await fetch(url, { headers: { 'User-Agent': 'Justcogs/1.0' } });
+        if (!response.ok) return null;
+        const data = await response.json();
+        if (data.error) return null;
+        const summary = data.album?.wiki?.summary || '';
+        return summary
+            .replace(/<a[^>]*>.*?<\/a>/gi, '')
+            .replace(/<[^>]+>/g, '')
+            .replace(/\s+/g, ' ')
+            .trim() || null;
+    } catch {
+        return null;
+    }
 }
 
 async function main() {
@@ -102,6 +123,14 @@ async function main() {
                     const communityRating = releaseDetails.community?.rating?.average || null;
                     release.community_rating = communityRating;
                     
+                    // Fetch Last.fm wiki
+                    const artist = release.basic_information?.artists?.[0]?.name || '';
+                    const title = release.basic_information?.title || '';
+                    if (artist && title) {
+                        release.lastfm_wiki = await fetchLastfmWiki(artist, title);
+                        await delay(250);
+                    }
+
                     // Rate limit: wait 1.2 seconds between requests
                     if (i < allReleases.length - 1) {
                         await delay(1200);
@@ -109,6 +138,7 @@ async function main() {
                 } catch (error) {
                     console.warn(`Failed to fetch rating for release ${releaseId}:`, error.message);
                     release.community_rating = null;
+                    release.lastfm_wiki = null;
                 }
             }
         }
