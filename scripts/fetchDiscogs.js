@@ -52,10 +52,11 @@ async function fetchLastfmWiki(artist, album) {
         if (!response.ok) return null;
         const data = await response.json();
         if (data.error) return null;
-        const summary = data.album?.wiki?.summary || '';
-        return summary
+        const text = data.album?.wiki?.content || data.album?.wiki?.summary || '';
+        return text
             .replace(/<a[^>]*>.*?<\/a>/gi, '')
             .replace(/<[^>]+>/g, '')
+            .replace(/\s*\.\s*$/, '')
             .replace(/\s+/g, ' ')
             .trim() || null;
     } catch {
