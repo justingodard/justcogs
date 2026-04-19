@@ -4689,7 +4689,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.47
+      "community_rating": 4.46
     },
     {
       "id": 174477,
@@ -4712,7 +4712,8 @@
             "text": "Hollywood Press, Gatefold, Braille ",
             "descriptions": [
               "LP",
-              "Album"
+              "Album",
+              "Stereo"
             ]
           }
         ],
@@ -5473,5 +5474,5 @@
       "community_rating": 4.45
     }
   ],
-  "lastUpdated": "2026-04-19T02:53:58.371Z"
+  "lastUpdated": "2026-04-19T23:16:34.705Z"
 }
