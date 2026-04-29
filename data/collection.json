@@ -1014,7 +1014,7 @@
         "thumb": "https://i.discogs.com/YWTGAipyBviGoDkOpW7tR0EhVgRKQj49EHkzGC9NNAI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3OTcy/MzAtMTI0NTc1NzIw/OC5qcGVn.jpeg",
         "cover_image": "https://i.discogs.com/_E3wkaVdLUfETt0-kpD6w2IkLp8oo52NFpJRm_mfWjw/rs:fit/g:sm/q:90/h:600/w:599/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3OTcy/MzAtMTI0NTc1NzIw/OC5qcGVn.jpeg",
         "title": "Sounds Of Silence",
-        "year": 1966,
+        "year": 1968,
         "formats": [
           {
             "name": "Vinyl",
@@ -1023,6 +1023,7 @@
             "descriptions": [
               "LP",
               "Album",
+              "Repress",
               "Stereo"
             ]
           }
@@ -5559,5 +5560,5 @@
       "lastfm_wiki": "Tomorrow's Harvest is the fourth studio album from the Scottish electronic music duo Boards of Canada. The album was released on 5 June 2013 in Japan, 10 June 2013 in Europe and 11 June in North America, via Warp Records worldwide."
     }
   ],
-  "lastUpdated": "2026-04-28T03:28:13.273Z"
+  "lastUpdated": "2026-04-29T03:26:22.783Z"
 }
