@@ -1555,7 +1555,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.24,
+      "community_rating": 4.25,
       "lastfm_wiki": "Miles Davis tp\nWayne Shorter ts\nHerbie Hancock p\nRon Carter b\nTony Williams dr\nRecorded 1967-1968, Publ. 1976"
     },
     {
@@ -3969,8 +3969,8 @@
         "master_id": 38776,
         "master_url": "https://api.discogs.com/masters/38776",
         "resource_url": "https://api.discogs.com/releases/13552836",
-        "thumb": "https://i.discogs.com/iftwyadP6QIw60zTzUo5rtT-qqQV6pdpK4dUD55eHPw/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNTUy/ODM2LTE1NTYzODUx/OTEtNzMxMS5qcGVn.jpeg",
-        "cover_image": "https://i.discogs.com/mP5WM7tZOnzt_BPp-w8R7ZqlhIZgolR2eW4ixTXd1to/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNTUy/ODM2LTE1NTYzODUx/OTEtNzMxMS5qcGVn.jpeg",
+        "thumb": "https://i.discogs.com/z2XuRWfjCm7s37nUeoKo_6MVT1OKlAPKDBZDgjXZ7go/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNTUy/ODM2LTE3ODAyOTY0/MTAtNjM2Ny5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/CpvfmNNZn1svQoj1AED3mfWV7nmv8u4XnMFZtJPoCuQ/rs:fit/g:sm/q:90/h:600/w:595/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNTUy/ODM2LTE3ODAyOTY0/MTAtNjM2Ny5qcGVn.jpeg",
         "title": "Fleetwood Mac",
         "year": 1975,
         "formats": [
@@ -5560,5 +5560,5 @@
       "lastfm_wiki": "Tomorrow's Harvest is the fourth studio album from the Scottish electronic music duo Boards of Canada. The album was released on 5 June 2013 in Japan, 10 June 2013 in Europe and 11 June in North America, via Warp Records worldwide."
     }
   ],
-  "lastUpdated": "2026-06-01T04:17:57.202Z"
+  "lastUpdated": "2026-06-02T04:11:08.777Z"
 }
