@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Justcogs</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <style>
         * {
-            font-family: 'IBM Plex Mono', sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-kerning: normal;
+            font-feature-settings: "kern" 1;
+            text-rendering: optimizeLegibility;
         }
         body {
             margin: 24px;
@@ -38,11 +39,13 @@
         }
         .release-card .artist {
             font-weight: 400;
+            line-height: 1.2;
             margin-bottom: 8px;
         }
         .release-card .title {
             color: #333;
-            font-weight: 400;
+            font-weight: 600;
+            line-height: 1.2;
             margin-top: 8px;
         }
         .release-card .year {
@@ -110,13 +113,15 @@
             font-weight: 600;
         }
         #lucky-link {
-            color: #06c;
+            color: #666;
             text-decoration: none;
             cursor: pointer;
-            font-size: 0.9em;
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.4em;
         }
         #lucky-link:hover {
-            text-decoration: underline;
+            color: #000;
         }
         @media (max-width: 1100px) {
             body {
@@ -170,12 +175,14 @@
     
     <div id="header-container">
         <h1 id="site-title" style="cursor:pointer;">Justcogs</h1>
-        <a id="lucky-link" href="#">Surprise me!</a>
+        <a id="lucky-link" href="#" title="Surprise me!" aria-label="Surprise me!">
+            <i class="ph ph-shuffle"></i>
+        </a>
     </div>
     <div id="last-sync" style="margin-bottom: 12px; font-size: 0.9em; color: #666;"></div>
     <div id="search-container">
         <input type="text" id="search-input" placeholder="Search..." />
-        <span id="clear-link">×</span>
+        <span id="clear-link"><i class="ph ph-x"></i></span>
     </div>
     <div id="collection"></div>
 
