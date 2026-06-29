@@ -810,7 +810,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.12,
+      "community_rating": 4.13,
       "lastfm_wiki": null
     },
     {
@@ -2334,8 +2334,8 @@
         "master_id": 435524,
         "master_url": "https://api.discogs.com/masters/435524",
         "resource_url": "https://api.discogs.com/releases/120096",
-        "thumb": "https://i.discogs.com/gFFPJRZd4BWUkml2WGlx2r6zO6eKEdm75bjMV42sjUw/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyMDA5/Ni0xMDg1NjAwNjA3/LmpwZw.jpeg",
-        "cover_image": "https://i.discogs.com/zl5v5VCYQuYQcQtCa2xNah3p9LlsCDvObhfYWdGLjP4/rs:fit/g:sm/q:90/h:344/w:358/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyMDA5/Ni0xMDg1NjAwNjA3/LmpwZw.jpeg",
+        "thumb": "https://i.discogs.com/5YWdyFVotg2vQGlfaicKooHDj8TlJmwd778QARxwH1Y/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyMDA5/Ni0xMzc0NzIxNDI4/LTQ4NjQuanBlZw.jpeg",
+        "cover_image": "https://i.discogs.com/OAghKg3BfX-v-b0RjU28RbznG3oBnezYVrgXI-IET8E/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyMDA5/Ni0xMzc0NzIxNDI4/LTQ4NjQuanBlZw.jpeg",
         "title": "Off The Wall",
         "year": 1979,
         "formats": [
@@ -5560,5 +5560,5 @@
       "lastfm_wiki": "Tomorrow's Harvest is the fourth studio album from the Scottish electronic music duo Boards of Canada. The album was released on 5 June 2013 in Japan, 10 June 2013 in Europe and 11 June in North America, via Warp Records worldwide."
     }
   ],
-  "lastUpdated": "2026-06-28T04:02:03.805Z"
+  "lastUpdated": "2026-06-29T04:08:12.687Z"
 }
