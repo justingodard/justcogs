@@ -3,7 +3,7 @@
     "page": 1,
     "pages": 1,
     "per_page": 100,
-    "items": 85,
+    "items": 89,
     "urls": {}
   },
   "releases": [
@@ -152,6 +152,82 @@
       "folder_id": 1,
       "community_rating": 4.42,
       "lastfm_wiki": null
+    },
+    {
+      "id": 13099818,
+      "instance_id": 2160118827,
+      "date_added": "2026-07-01T12:14:52-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 13099818,
+        "master_id": 14443,
+        "master_url": "https://api.discogs.com/masters/14443",
+        "resource_url": "https://api.discogs.com/releases/13099818",
+        "thumb": "https://i.discogs.com/iZ-1_iteQgr1ufCu3k4v0gXFxryFJZ2aD6TjwIktcRg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMDk5/ODE4LTE1NDgwNDAy/OTEtMTc5OC5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/ym8TEa0BBePK8As4O5AnmIPqxLejaoLayhvpjDJ2K7o/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMDk5/ODE4LTE1NDgwNDAy/OTEtMTc5OC5qcGVn.jpeg",
+        "title": "Before The Flood",
+        "year": 1974,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "2",
+            "text": "Non-Gatefold",
+            "descriptions": [
+              "LP",
+              "Album"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Asylum Records",
+            "catno": "AB 201",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 33574,
+            "resource_url": "https://api.discogs.com/labels/33574"
+          },
+          {
+            "name": "Asylum Records",
+            "catno": "AB-201",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 33574,
+            "resource_url": "https://api.discogs.com/labels/33574"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Bob Dylan",
+            "anv": "",
+            "join": "/",
+            "role": "",
+            "tracks": "",
+            "id": 59792,
+            "resource_url": "https://api.discogs.com/artists/59792"
+          },
+          {
+            "name": "The Band",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 254199,
+            "resource_url": "https://api.discogs.com/artists/254199"
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "styles": [
+          "Blues Rock",
+          "Folk Rock",
+          "Classic Rock"
+        ]
+      },
+      "folder_id": 1,
+      "community_rating": 5,
+      "lastfm_wiki": "Before the Flood is a live album by Bob Dylan and The Band, released in June of 1974 on Asylum Records, catalogue AB 201. It is the seventeenth album by Dylan and the seventh by the Band, and documents their joint 1974 American tour. It peaked at #3 on the Billboard 200, and reached #8 in the United Kingdom."
     },
     {
       "id": 1247061,
@@ -1323,6 +1399,65 @@
       "folder_id": 1,
       "community_rating": 4.15,
       "lastfm_wiki": null
+    },
+    {
+      "id": 2676016,
+      "instance_id": 2160120614,
+      "date_added": "2026-07-01T12:20:13-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 2676016,
+        "master_id": 34081,
+        "master_url": "https://api.discogs.com/masters/34081",
+        "resource_url": "https://api.discogs.com/releases/2676016",
+        "thumb": "https://i.discogs.com/EAUQDfobCNQzafbrCriFzHhkIlGOycgquqihWbLTINA/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2NzYw/MTYtMTMxMzEwOTcz/OC5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/V9N6eyp_kc4yBnFBlcUrj2JpjOKo2zFSVpaeB-Dse_s/rs:fit/g:sm/q:90/h:600/w:593/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2NzYw/MTYtMTMxMzEwOTcz/OC5qcGVn.jpeg",
+        "title": "Time Out",
+        "year": 1961,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+              "LP",
+              "Album",
+              "Repress",
+              "Stereo"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Columbia",
+            "catno": "CS 8192",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 1866,
+            "resource_url": "https://api.discogs.com/labels/1866"
+          }
+        ],
+        "artists": [
+          {
+            "name": "The Dave Brubeck Quartet",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 251689,
+            "resource_url": "https://api.discogs.com/artists/251689"
+          }
+        ],
+        "genres": [
+          "Jazz"
+        ],
+        "styles": [
+          "Bop",
+          "Cool Jazz"
+        ]
+      },
+      "folder_id": 1,
+      "community_rating": 4.57,
+      "lastfm_wiki": "Time Out is a studio album by the American jazz group the Dave Brubeck Quartet, released in 1959 on Columbia Records. Recorded at Columbia's 30th Street Studio in New York City, it is based upon the use of time signatures that were unusual for jazz such as 9/8, 6/4 and 5/4. The album is a subtle blend of cool and West Coast jazz.\n\nThe album peaked at No. 2 on the Billboard pop albums chart, and was the first jazz album to sell a million copies. The single \"Take Five\" off the album was also the first jazz single to sell one million copies. By 1963, the record had sold 500,000 units, and in 2011 it was certified double platinum by the RIAA, signifying over two million records sold. The album was inducted in the Grammy Hall of Fame in 2009.\n\nThe album was selected, in 2005, for preservation in the United States National Recording Registry by the Library of Congress as being \"culturally, historically, or aesthetically significant\"."
     },
     {
       "id": 863164,
@@ -3259,6 +3394,73 @@
       "lastfm_wiki": "“Street Life” is a studio album by the American jazz band The Crusaders. It was released on December 9, 1979, and represents the band’s commercial popularity peak. The title track, featuring singer Randy Crawford, was a Top 40 pop single and became the group’s most successful entry on the soul chart 1. “Street Life” is a 39-minute album with six tracks."
     },
     {
+      "id": 5675290,
+      "instance_id": 2160118920,
+      "date_added": "2026-07-01T12:15:10-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 5675290,
+        "master_id": 53571,
+        "master_url": "https://api.discogs.com/masters/53571",
+        "resource_url": "https://api.discogs.com/releases/5675290",
+        "thumb": "https://i.discogs.com/9UA5Nze-ylFYs4U1_RNbGW_rUFlHPSiQI00Q-2P7Uag/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU2NzUy/OTAtMTQ1MDIyODk5/Mi03MTYyLmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/3IGuINGJdypm-3eyIyGf-xK1lpz-enicyfPdVmli5U0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU2NzUy/OTAtMTQ1MDIyODk5/Mi03MTYyLmpwZWc.jpeg",
+        "title": "Suburban Light",
+        "year": 2014,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue"
+            ]
+          },
+          {
+            "name": "CD",
+            "qty": "1",
+            "descriptions": [
+              "Compilation"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Merge Records",
+            "catno": "MRG187",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 7496,
+            "resource_url": "https://api.discogs.com/labels/7496"
+          }
+        ],
+        "artists": [
+          {
+            "name": "The Clientele",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 195721,
+            "resource_url": "https://api.discogs.com/artists/195721"
+          }
+        ],
+        "genres": [
+          "Rock",
+          "Pop"
+        ],
+        "styles": [
+          "Indie Pop",
+          "Indie Rock",
+          "Alternative Rock"
+        ]
+      },
+      "folder_id": 1,
+      "community_rating": 4.55,
+      "lastfm_wiki": "Suburban Light is the debut album by The Clientele, released in November 2000. The album is not a proper debut as such because it's a collection of singles released from 1997 through 2000."
+    },
+    {
       "id": 7395,
       "instance_id": 2044662168,
       "date_added": "2025-07-25T17:28:02-07:00",
@@ -4015,6 +4217,63 @@
       "folder_id": 1,
       "community_rating": 4.27,
       "lastfm_wiki": "It's unfair to say that Fleetwood Mac had no pop pretensions prior to the addition of Lindsey Buckingham and Stevie Nicks to the lineup in 1975. When they were led by Bob Welch they often flirted with pop, even recording the first version of the unabashedly smooth and sappy \"Sentimental Lady,\" which would later be one of the defining soft rock hits of the late '70s. Still, there's no denying that 1975's Fleetwood Mac represents not just the rebirth of the band, but in effect a second debut for the group -- the introduction of a band that would dominate the sound of American and British mainstream pop for the next seven years. In fact, in retrospect, it's rather stunning how thoroughly Buckingham and Nicks, who had previously recorded as a duo and were romantically entangled in the past, overtook the British blues band. As soon as the Californian duo came onboard, Fleetwood Mac turned into a West Coast pop/rock band, transforming the very identity of the band and pushing the band's other songwriter, keyboardist Christine McVie, to a kindred soft rock sound. It could have all been too mellow if it weren't for the nervy, restless spirit of Buckingham, whose insistent opener, \"Monday Morning,\" sets the tone for the rest of the album, as well the next few years of the group's career. Surging with a pushily melodic chorus and a breezy Californian feel, the song has little to do with anything the Mac had done before this, and it is a positively brilliant slice of pop songwriting, simultaneously urgent and timeless. After that barnstorming opener, Buckingham lies back a bit, contributing only two other songs -- a cover of Richard Curtis' \"Blue Letter,\" the second best up-tempo song here, and the closer, \"I'm So Afraid\" -- while the rest of the album is given over to the wily spirits of Nicks and McVie, whose singles \"Rhiannon,\" \"Say You Love Me,\" and \"Over My Head\" deservedly made this into a blockbuster. But a bandmember's contribution can never be reduced to his own tracks, and Buckingham not only gives the production depth, he motivates the rest of the band, particularly Nicks and McVie, to do great work, not just on the hit singles but the album tracks that give this record depth. It was diverse without being forced, percolating with innovative ideas, all filtered through an accessible yet sophisticated sensibility. While Rumours had more hits and Tusk was an inspired work of mad genius, Fleetwood Mac wrote the blueprint for Californian soft rock of the late '70s and was the standard the rest were judged by. ~ Stephen Thomas Erlewine, Rovi"
+    },
+    {
+      "id": 12990038,
+      "instance_id": 2160119754,
+      "date_added": "2026-07-01T12:17:39-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 12990038,
+        "master_id": 38457,
+        "master_url": "https://api.discogs.com/masters/38457",
+        "resource_url": "https://api.discogs.com/releases/12990038",
+        "thumb": "https://i.discogs.com/VWpCJsNbJj-yaey6QQaVyzaB61TnhMTMVnGHaagi-nY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyOTkw/MDM4LTE1NDYwMTM2/MTktOTU1Ny5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/56tULIsB7teCPItLj08EBo5mM6tGuTYKa6v9T5yq2us/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyOTkw/MDM4LTE1NDYwMTM2/MTktOTU1Ny5qcGVn.jpeg",
+        "title": "Comes A Time",
+        "year": 1978,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "Don Mills Pressing",
+            "descriptions": [
+              "LP",
+              "Album"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Reprise Records",
+            "catno": "MSK 2266",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 157,
+            "resource_url": "https://api.discogs.com/labels/157"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Neil Young",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 138556,
+            "resource_url": "https://api.discogs.com/artists/138556"
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "styles": [
+          "Folk Rock"
+        ]
+      },
+      "folder_id": 1,
+      "community_rating": 4,
+      "lastfm_wiki": "Six and a half years later, Comes a Time finally was the Neil Young album for the millions of fans who had loved Harvest, an acoustic-based record with country overtones and romantic, autobiographical lyrics, and many of those fans returned to the fold, enough to make Comes a Time Young's first Top Ten album since Harvest. He signaled the album's direction with the leadoff track, \"Goin' Back,\" and its retrospective theme augmented with an orchestral backup and the deliberate beat familiar from his number one hit \"Heart of Gold.\" Of course, Young remained sly about this retrenchment. \"I feel like goin' back,\" he sang, but added, \"back where there's nowhere to stay.\" Doubtless he had no intention of staying with this style, but for the length of the album, melodies, love lyrics, lush arrangements, and steel guitar solos dominated, and Young's vocals were made more accessible by being paired with Nicolette Larson's harmonies. Larson's own version of Young's \"Lotta Love,\" released shortly after the one heard here, became a Top Ten hit single. Other highlights included the reflective \"Already One,\" which treats the unusual subject of the nature of a divorced family, the ironic \"Field of Opportunity,\" and a cover of Ian Tyson's folk standard \"Four Strong Winds\" (a country Top Ten hit for Bobby Bare in 1965) and a song Neil drew much inspiration from as a teenager in Winnipeg."
     },
     {
       "id": 1568483,
@@ -5367,7 +5626,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.4,
+      "community_rating": 4.39,
       "lastfm_wiki": "Original Release Date: November 1968\nVan Morrison - rhythm guitar, keyboard, saxophone, vocal; \nJay Berliner - guitar; \nBarry Kornfeld - guitar on \"The Way Young Lovers Do\";\nRichard Davis - bass; \nConnie Kay - drums;\nJohn Payne - flute, soprano saxophone;\nWarren Smith, Jr. - percussion, vibraphone;\nProducer: Lewis Merenstein"
     },
     {
@@ -5560,5 +5819,5 @@
       "lastfm_wiki": "Tomorrow's Harvest is the fourth studio album from the Scottish electronic music duo Boards of Canada. The album was released on 5 June 2013 in Japan, 10 June 2013 in Europe and 11 June in North America, via Warp Records worldwide."
     }
   ],
-  "lastUpdated": "2026-07-01T04:05:52.890Z"
+  "lastUpdated": "2026-07-02T03:45:41.613Z"
 }
