@@ -4,16 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Justcogs</title>
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            if (stored === 'light' || stored === 'dark') {
+                document.documentElement.setAttribute('data-theme', stored);
+            }
+        })();
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 240 10% 3.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 240 10% 3.9%;
+            --primary: 240 5.9% 10%;
+            --muted-foreground: 240 3.8% 46.1%;
+            --accent: 240 4.8% 95.9%;
+            --accent-foreground: 240 5.9% 10%;
+            --border: 240 5.9% 90%;
+            --input: 240 5.9% 90%;
+            --ring: 240 5.9% 10%;
+            --radius: 0.5rem;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --background: 240 10% 3.9%;
+                --foreground: 0 0% 98%;
+                --card: 240 10% 3.9%;
+                --card-foreground: 0 0% 98%;
+                --primary: 0 0% 98%;
+                --muted-foreground: 240 5% 64.9%;
+                --accent: 240 3.7% 15.9%;
+                --accent-foreground: 0 0% 98%;
+                --border: 240 3.7% 15.9%;
+                --input: 240 3.7% 15.9%;
+                --ring: 240 4.9% 83.9%;
+            }
+        }
+        :root[data-theme="dark"] {
+            --background: 240 10% 3.9%;
+            --foreground: 0 0% 98%;
+            --card: 240 10% 3.9%;
+            --card-foreground: 0 0% 98%;
+            --primary: 0 0% 98%;
+            --muted-foreground: 240 5% 64.9%;
+            --accent: 240 3.7% 15.9%;
+            --accent-foreground: 0 0% 98%;
+            --border: 240 3.7% 15.9%;
+            --input: 240 3.7% 15.9%;
+            --ring: 240 4.9% 83.9%;
+        }
         * {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-kerning: normal;
             font-feature-settings: "kern" 1;
             text-rendering: optimizeLegibility;
+            box-sizing: border-box;
         }
         body {
             margin: 24px;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
         }
         #releases-grid {
             display: grid;
@@ -25,13 +78,22 @@
             display: flex;
             flex-direction: column;
             gap: 4px;
+            padding: 10px;
+            background: hsl(var(--card));
+            color: hsl(var(--card-foreground));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+            transition: box-shadow 0.15s ease;
+        }
+        .release-card:hover {
+            box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.08);
         }
         .release-card img {
             width: 100%;
             height: auto;
             aspect-ratio: 1;
             object-fit: cover;
-            border-radius: 4px;
         }
         .release-card > div {
             font-size: 0.9em;
@@ -40,29 +102,28 @@
         .release-card .artist {
             font-weight: 400;
             font-size: 0.875rem;
-            color: #666;
+            color: hsl(var(--muted-foreground));
             line-height: 1.2;
             margin-bottom: 8px;
         }
         .release-card .title {
-            color: #333;
+            color: hsl(var(--card-foreground));
             font-weight: 600;
             font-size: 1rem;
             line-height: 1.2;
             margin-top: 8px;
         }
         .release-card .year {
-            color: #999;
+            color: hsl(var(--muted-foreground));
             font-size: 0.75rem;
         }
         .release-card .genres {
             font-size: 0.75rem;
             margin-bottom: 16px;
             margin-top: 8px;
-
         }
         .release-card [class^="rating-"] {
-            color: #999;
+            color: hsl(var(--muted-foreground));
             font-size: 0.8em;
             display: flex;
             gap: 2px;
@@ -70,6 +131,17 @@
         .star-icon {
             width: 14px;
             height: 14px;
+        }
+        .genre-link,
+        .artist-link {
+            color: hsl(var(--primary));
+            text-underline-offset: 4px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .genre-link:hover,
+        .artist-link:hover {
+            text-decoration: underline;
         }
         #search-container {
             position: relative;
@@ -79,29 +151,43 @@
             height: 40px;
             padding: 0 40px 0 12px;
             font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+            border: 1px solid hsl(var(--input));
+            border-radius: var(--radius);
             width: 100%;
-            box-sizing: border-box;
+            outline: none;
+            transition: box-shadow 0.15s ease, border-color 0.15s ease;
+        }
+        #search-input::placeholder {
+            color: hsl(var(--muted-foreground));
+        }
+        #search-input:focus-visible {
+            border-color: hsl(var(--ring));
+            box-shadow: 0 0 0 3px hsl(var(--ring) / 0.25);
         }
         #clear-link {
             position: absolute;
-            right: 10px;
+            right: 6px;
             top: 50%;
             transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
+            width: 28px;
+            height: 28px;
             display: none;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            color: #666;
-            font-size: 20px;
-            line-height: 1;
-            font-weight: 300;
+            color: hsl(var(--muted-foreground));
+            border-radius: calc(var(--radius) - 2px);
+            transition: background-color 0.15s ease, color 0.15s ease;
         }
         #clear-link:hover {
-            color: #000;
+            background: hsl(var(--accent));
+            color: hsl(var(--accent-foreground));
+        }
+        #clear-link svg {
+            width: 16px;
+            height: 16px;
         }
         #header-container {
             display: flex;
@@ -115,16 +201,71 @@
             font-size: 2em;
             font-weight: 600;
         }
+        #header-actions {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        #theme-toggle {
+            all: unset;
+            box-sizing: border-box;
+            color: hsl(var(--muted-foreground));
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius);
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+        #theme-toggle:hover {
+            background: hsl(var(--accent));
+            color: hsl(var(--accent-foreground));
+        }
+        #theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+        #theme-toggle .icon-sun {
+            display: none;
+        }
+        #theme-toggle .icon-moon {
+            display: block;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) #theme-toggle .icon-sun {
+                display: block;
+            }
+            :root:not([data-theme="light"]) #theme-toggle .icon-moon {
+                display: none;
+            }
+        }
+        :root[data-theme="dark"] #theme-toggle .icon-sun {
+            display: block;
+        }
+        :root[data-theme="dark"] #theme-toggle .icon-moon {
+            display: none;
+        }
         #lucky-link {
-            color: #666;
+            color: hsl(var(--muted-foreground));
             text-decoration: none;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            font-size: 1.4em;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius);
+            transition: background-color 0.15s ease, color 0.15s ease;
         }
         #lucky-link:hover {
-            color: #000;
+            background: hsl(var(--accent));
+            color: hsl(var(--accent-foreground));
+        }
+        #lucky-link svg {
+            width: 20px;
+            height: 20px;
         }
         @media (max-width: 1100px) {
             body {
@@ -178,14 +319,20 @@
     
     <div id="header-container">
         <h1 id="site-title" style="cursor:pointer;">Justcogs</h1>
-        <a id="lucky-link" href="#" title="Surprise me!" aria-label="Surprise me!">
-            <i class="ph ph-shuffle"></i>
-        </a>
+        <div id="header-actions">
+            <button id="theme-toggle" type="button" title="Toggle theme" aria-label="Toggle theme">
+                <i data-lucide="moon" class="icon-moon"></i>
+                <i data-lucide="sun" class="icon-sun"></i>
+            </button>
+            <a id="lucky-link" href="#" title="Surprise me!" aria-label="Surprise me!">
+                <i data-lucide="shuffle"></i>
+            </a>
+        </div>
     </div>
-    <div id="last-sync" style="margin-bottom: 12px; font-size: 0.9em; color: #666;"></div>
+    <div id="last-sync" style="margin-bottom: 12px; font-size: 0.9em; color: hsl(var(--muted-foreground));"></div>
     <div id="search-container">
         <input type="text" id="search-input" placeholder="Search..." />
-        <span id="clear-link"><i class="ph ph-x"></i></span>
+        <span id="clear-link"><i data-lucide="x"></i></span>
     </div>
     <div id="collection"></div>
 
@@ -226,16 +373,19 @@
             
             let starsHtml = '';
             
+            const filledColor = 'hsl(var(--foreground))';
+            const emptyColor = 'hsl(var(--muted-foreground))';
+
             // Full stars
             for (let i = 0; i < fullStars; i++) {
-                starsHtml += `<svg class="star-icon" viewBox="0 0 24 24"><use href="#star" fill="#000"></use></svg>`;
+                starsHtml += `<svg class="star-icon" viewBox="0 0 24 24"><use href="#star" fill="${filledColor}"></use></svg>`;
             }
-            
+
             // Partial star (if needed)
             if (remainder > 0) {
                 const gradientId = `gradient-${releaseId}`;
                 const percentage = Math.round(remainder * 100);
-                
+
                 // Add gradient definition to the existing SVG defs
                 const svgDefs = document.querySelector('svg defs');
                 if (svgDefs && !document.getElementById(gradientId)) {
@@ -245,26 +395,26 @@
                     gradient.setAttribute('x2', '100%');
                     gradient.setAttribute('y1', '0');
                     gradient.setAttribute('y2', '0');
-                    
+
                     const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
                     stop1.setAttribute('offset', `${percentage}%`);
-                    stop1.setAttribute('stop-color', '#000');
-                    
+                    stop1.setAttribute('stop-color', filledColor);
+
                     const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
                     stop2.setAttribute('offset', `${percentage}%`);
-                    stop2.setAttribute('stop-color', '#d1d5db');
-                    
+                    stop2.setAttribute('stop-color', emptyColor);
+
                     gradient.appendChild(stop1);
                     gradient.appendChild(stop2);
                     svgDefs.appendChild(gradient);
                 }
-                
+
                 starsHtml += `<svg class="star-icon" viewBox="0 0 24 24"><use href="#star" fill="url(#${gradientId})"></use></svg>`;
             }
-            
+
             // Empty stars
             for (let i = 0; i < emptyStars; i++) {
-                starsHtml += `<svg class="star-icon" viewBox="0 0 24 24"><use href="#star" fill="#d1d5db"></use></svg>`;
+                starsHtml += `<svg class="star-icon" viewBox="0 0 24 24"><use href="#star" fill="${emptyColor}"></use></svg>`;
             }
             
             return starsHtml;
@@ -370,7 +520,7 @@
                 const releaseId = basicInfo.id;
                 const discogsUrl = releaseId ? `https://www.discogs.com/release/${releaseId}` : '';
                 const genres = getReleaseGenres(release);
-                const genreLinks = genres.map((g) => `<span class="genre-link" data-genre="${escapeHtml(g)}" style="color: #06c; text-decoration: underline; cursor: pointer;">${escapeHtml(g)}</span>`).join(', ');
+                const genreLinks = genres.map((g) => `<span class="genre-link" data-genre="${escapeHtml(g)}">${escapeHtml(g)}</span>`).join(', ');
                 
                 // Format label • year line
                 const yearDisplay = year && year > 0 ? escapeHtml(year) : 'Unknown';
@@ -380,7 +530,7 @@
                     <div id="release-${releaseId}" data-release-id="${releaseId}" class="release-card">
                         ${coverImage ? `<img src="${coverImage}" alt="${escapeHtml(artist)} - ${escapeHtml(title)}" />` : ''}
                         <div class="title">${escapeHtml(title)}</div>
-                        <div class="artist"><span class="artist-link" data-artist="${escapeHtml(artist)}" style="color: #06c; text-decoration: underline; cursor: pointer;">${escapeHtml(artist)}</span></div>
+                        <div class="artist"><span class="artist-link" data-artist="${escapeHtml(artist)}">${escapeHtml(artist)}</span></div>
                         <div class="year">${labelYearLine}</div>
                         <div class="rating-${releaseId}">-</div>
                         ${genreLinks ? `<div class="genres">${genreLinks}</div>` : ''}
@@ -494,11 +644,12 @@
                 }
                 await applySearchFilter();
             } catch (error) {
-                collectionDiv.innerHTML = `<div style="color: red;">Error: ${error.message}</div>`;
+                collectionDiv.innerHTML = `<div style="color: hsl(0 84.2% 60.2%);">Error: ${error.message}</div>`;
             }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
             const searchInput = document.getElementById('search-input');
             const clearLink = document.getElementById('clear-link');
             const collectionDiv = document.getElementById('collection');
@@ -564,6 +715,16 @@
                 // Don't prevent default for other clicks (like album cover links)
             });
             
+            // Handle theme toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('click', () => {
+                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const currentTheme = document.documentElement.getAttribute('data-theme') || (systemPrefersDark ? 'dark' : 'light');
+                const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', nextTheme);
+                localStorage.setItem('theme', nextTheme);
+            });
+
             // Handle "Surprise me!" click
             const luckyLink = document.getElementById('lucky-link');
             luckyLink.addEventListener('click', (e) => {
