@@ -3,7 +3,7 @@
     "page": 1,
     "pages": 1,
     "per_page": 100,
-    "items": 90,
+    "items": 91,
     "urls": {}
   },
   "releases": [
@@ -889,7 +889,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.13,
+      "community_rating": 4.14,
       "lastfm_wiki": null
     },
     {
@@ -2151,7 +2151,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.23,
+      "community_rating": 4.24,
       "lastfm_wiki": null
     },
     {
@@ -3703,6 +3703,66 @@
       "folder_id": 1,
       "community_rating": 4.27,
       "lastfm_wiki": "In 1971, a year after the release of the critically-acclaimed yet commercially unsuccessful album Writer, an undaunted King gave thoughtful, folk-flavored reinterpretations of some of her early pop hits as a songwriter, interweaving them with new compositions in the aptly-titled Tapestry. The album would become the turning point in her career.\n\nTapestry was instantly recognized as one of the landmark albums of the singer-songwriter genre of the early 1970s. With numerous hit singles, it would remain on the charts for nearly six years, selling over 10 million copies in the United States alone, and an estimated 22 million worldwide, making it King's most popular album to this day among fans and critics alike. The album garnered four Grammy Awards at the 1972 ceremony, including Album of the Year; Best Pop Vocal Performance, Female; Record of the Year (It's Too Late); and Song of the Year (You've Got a Friend). \n\nTapestry was placed at #36 on Rolling Stone's 500 Greatest Albums of All Time, while \"It's Too Late\" was placed at #469 on Rolling Stone's 500 Greatest Songs of All Time. And until Michael Jackson's groundbreaking album Thriller came along in 1982, Tapestry was the top-selling pop solo album of all time, with sales of 13 million copies in 1971 alone."
+    },
+    {
+      "id": 7066979,
+      "instance_id": 2190906783,
+      "date_added": "2026-10-04T12:34:17-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 7066979,
+        "master_id": 59087,
+        "master_url": "https://api.discogs.com/masters/59087",
+        "resource_url": "https://api.discogs.com/releases/7066979",
+        "thumb": "https://i.discogs.com/n91foXyM5zWyVYM2WDccXNku0uvWT0Y9Kvi79jIa6wQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwNjY5/NzktMTYzODA5NDEw/Ni01OTk0LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/BKaaOuhqQAVEDdC3iHYWq1W04_5D5cXA9Be-WoLS8T0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwNjY5/NzktMTYzODA5NDEw/Ni01OTk0LmpwZWc.jpeg",
+        "title": "Talkie Walkie",
+        "year": 2015,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "180g",
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Parlophone",
+            "catno": "72435 966001 1",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 2294,
+            "resource_url": "https://api.discogs.com/labels/2294"
+          }
+        ],
+        "artists": [
+          {
+            "name": "AIR",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 2770,
+            "resource_url": "https://api.discogs.com/artists/2770"
+          }
+        ],
+        "genres": [
+          "Electronic"
+        ],
+        "styles": [
+          "Downtempo",
+          "Synth-pop",
+          "Ambient"
+        ]
+      },
+      "folder_id": 1,
+      "community_rating": 4.58,
+      "lastfm_wiki": "Talkie Walkie is the fourth full-length album by Air, released on January 27, 2004. The album was possibly named after the song \"Le Talkie Walkie\" by Serge Gainsbourg, a known influence of the duo. The track \"Alone in Kyoto\" was featured on the soundtrack to the 2004 film Lost in Translation. This album has been released with the Copy Control protection system in some regions."
     },
     {
       "id": 74743,
@@ -5880,5 +5940,5 @@
       "lastfm_wiki": "Tomorrow's Harvest is the fourth studio album from the Scottish electronic music duo Boards of Canada. The album was released on 5 June 2013 in Japan, 10 June 2013 in Europe and 11 June in North America, via Warp Records worldwide."
     }
   ],
-  "lastUpdated": "2026-10-04T04:49:59.334Z"
+  "lastUpdated": "2026-10-05T04:37:39.301Z"
 }
