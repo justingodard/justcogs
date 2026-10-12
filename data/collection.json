@@ -406,7 +406,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.47,
+      "community_rating": 4.46,
       "lastfm_wiki": "\"James Blake\" is the eponymous debut studio album by English musician James Blake, released in both the United Kingdom and the United States on 4 February 2011 on his own label, ATLAS, supported by A&M Records. The release was supported with the release of the album's first single, \"Limit to Your Love\", on 28 November 2010."
     },
     {
@@ -3204,8 +3204,8 @@
         "master_id": 77609,
         "master_url": "https://api.discogs.com/masters/77609",
         "resource_url": "https://api.discogs.com/releases/10536536",
-        "thumb": "https://i.discogs.com/1L8xEeeXBSjnhxhcjAgWTWMA01QkVEjn7UShdpe86PQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNTM2/NTM2LTE3ODc3NTE3/MjUtMTQzMS5qcGVn.jpeg",
-        "cover_image": "https://i.discogs.com/mpbaGvEN92vxeqLoaTeDU-toOXoEXIihpc1Ml61YWu8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNTM2/NTM2LTE3ODc3NTE3/MjUtMTQzMS5qcGVn.jpeg",
+        "thumb": "https://i.discogs.com/1s35wq6s4FFk6yAYUVuSBE-kD9kJJZ3JRymkzmkb1tM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNTM2/NTM2LTE0OTk0Njc0/NTEtNDk1NC5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/Pp5X8Yqz9HsD-VDy6Pe28w8Oar-l59BEUjKNvBDwNOo/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNTM2/NTM2LTE0OTk0Njc0/NTEtNDk1NC5qcGVn.jpeg",
         "title": "Boogie With Canned Heat",
         "year": 1968,
         "formats": [
@@ -5940,5 +5940,5 @@
       "lastfm_wiki": "Tomorrow's Harvest is the fourth studio album from the Scottish electronic music duo Boards of Canada. The album was released on 5 June 2013 in Japan, 10 June 2013 in Europe and 11 June in North America, via Warp Records worldwide."
     }
   ],
-  "lastUpdated": "2026-10-11T04:36:52.227Z"
+  "lastUpdated": "2026-10-12T04:52:07.537Z"
 }
