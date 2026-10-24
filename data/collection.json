@@ -3,7 +3,7 @@
     "page": 1,
     "pages": 1,
     "per_page": 100,
-    "items": 91,
+    "items": 95,
     "urls": {}
   },
   "releases": [
@@ -153,7 +153,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 4.43,
+      "community_rating": 4.42,
       "lastfm_wiki": null
     },
     {
@@ -542,6 +542,110 @@
       "folder_id": 1,
       "community_rating": 4.66,
       "lastfm_wiki": "Blue Train is a studio album by John Coltrane which was released in January 1958 by Blue Note Records. Recorded at the Van Gelder Studio in Hackensack, New Jersey, it is the only Blue Note recording by Coltrane as session leader. It has been certified a gold record by the RIAA.\n\nBackground:\nThe album was recorded in the midst of Coltrane's residency at the Five Spot as a member of the Thelonious Monk quartet. The personnel include Coltrane's Miles Davis bandmates, Paul Chambers on bass and Philly Joe Jones on drums, both of whom had worked before with pianist Kenny Drew. Both trumpeter Lee Morgan and trombonist Curtis Fuller were up-and-coming jazz musicians, and both were members of Art Blakey's Jazz Messengers in due course. Unlike his previous label, Blue Note paid the musicians to rehearse the music for a couple of days before the recording session.\n\nAll of the compositions were written by Coltrane, with the exception of the standard \"I'm Old Fashioned\". Though at this point his compositions used conventional diatonic harmonies, they were set in unconventional ways. The title track is a blues with a quasi-minor (Eb7#9) theme. \"Locomotion\" is also a blues riff tune, in forty-four-bar form. \"Lazy Bird\" is in part a transposition into the key of \"G\" of the Tadd Dameron composition \"Lady Bird\".\n\nColtrane's playing exhibits the move toward what would become his signature style. His solos are more harmonic or \"vertical\" and lines arpeggiated. His timing was often apart from or over the beat, rather than playing on or behind it. During a 1960 interview, Coltrane described Blue Train as his favorite album of his own up to that point.\n\nMichael Cuscuna, the reissue producer at Blue Note had this to say from Joe Vella's podcast \"Traneumentary\": \"We’re listening to Blue Train, which to me is one of the most beautiful pieces on one of the most beautiful records that Coltrane recorded in the fifties. It’s his first real mature statement and he wrote all but one of the tunes on this album which was very rare in the fifties and each one is a gem, particularly the title tune Blue Train. And while it’s kind of easy to play the blues, this has a suspended and haunting kind of quality to it.\"\n\nLegacy:\nJohn Coltrane's next major album, Giant Steps, recorded in 1959, would break new melodic and harmonic ground in jazz, whereas Blue Train adheres to the hard bop style of the era. Musicologist Lewis Porter has also demonstrated a harmonic relationship between Coltrane's \"Lazy Bird\" and Tadd Dameron's \"Lady Bird\".\n\nIn 1997, The Ultimate Blue Train was released, adding two alternate takes and enhanced content, and in 1999 a 24bit 192 kHz DVD-Audio version was issued. In 2003, both a Super Audio Compact Disc version was released, as well as a remastered compact disc as part of Blue Note's Rudy Van Gelder series.\n\nIn 2000 it was voted number 339 in Colin Larkin's All Time Top 1000 Albums. He stated \"Coltrane may have made more important albums, but none swung as effectively as this one.\"\n\nIn 2015, Blue Note/Universal released a Blu-Ray Audio edition of the album with four bonus tracks, one of which is a previously unreleased take of \"Lazy Bird\".\n\nIn 2022, Blue Note released 'Blue Train: The Complete Masters' that include a second disc featuring seven alternate and incomplete takes, none of which have been released previously on vinyl, and four of which have never been released before on any format. The Complete Masters comes with a booklet featuring never-before-seen session photos by Francis Wolff and an essay by Coltrane expert Ashley Kahn. Both Tone Poet Vinyl Editions were produced by Joe Harley, mastered by Kevin Gray from the original analog master tapes, and pressed on 180g vinyl at RTI.\n\nPersonnel:\nJohn Coltrane – tenor saxophone\nLee Morgan – trumpet\nCurtis Fuller – trombone\nKenny Drew – piano\nPaul Chambers – bass\nPhilly Joe Jones – drums"
+    },
+    {
+      "id": 38558898,
+      "instance_id": 2196964770,
+      "date_added": "2026-10-23T04:59:31-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 38558898,
+        "master_id": 118117,
+        "master_url": "https://api.discogs.com/masters/118117",
+        "resource_url": "https://api.discogs.com/releases/38558898",
+        "thumb": "https://i.discogs.com/jkO9T9ZKtNIb4HVBWVNpp7zIyqs4yPTgnHfvKrkLszw/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4NTU4/ODk4LTE3OTA2MTU0/ODktNDQzOS5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/bMnsepXwTDbyqM72R2x3Xtk2m0yXkZgTjCCJvhCoCZw/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4NTU4/ODk4LTE3OTA2MTU0/ODktNDQzOS5qcGVn.jpeg",
+        "title": "Somethin' Else",
+        "year": 2026,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "140 Gram",
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Stereo"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Blue Note",
+            "catno": "1595",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "name": "UMe",
+            "catno": "1595",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 68029,
+            "resource_url": "https://api.discogs.com/labels/68029"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Cannonball Adderley",
+            "anv": "",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 61585,
+            "resource_url": "https://api.discogs.com/artists/61585"
+          },
+          {
+            "name": "Miles Davis",
+            "anv": "",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 23755,
+            "resource_url": "https://api.discogs.com/artists/23755"
+          },
+          {
+            "name": "Hank Jones",
+            "anv": "",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 265629,
+            "resource_url": "https://api.discogs.com/artists/265629"
+          },
+          {
+            "name": "Sam Jones",
+            "anv": "",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 256091,
+            "resource_url": "https://api.discogs.com/artists/256091"
+          },
+          {
+            "name": "Art Blakey",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 29977,
+            "resource_url": "https://api.discogs.com/artists/29977"
+          }
+        ],
+        "genres": [
+          "Jazz"
+        ],
+        "styles": [
+          "Bop",
+          "Hard Bop"
+        ]
+      },
+      "folder_id": 1,
+      "community_rating": 4.71,
+      "lastfm_wiki": "Somethin' Else is regarded as a landmark album in the hard bop and cool styles. This critically-acclaimed LP is notable for the presence and prominent contributions of Miles Davis, in one of his few recording dates for Blue Note Records. Many critics and jazz fans consider Somethin' Else to be among the greatest jazz albums of all time.\n\nCD reissues include a bonus track, variously titled \"Bangoon\" or (originally, and incorrectly) \"Allison's Uncle\". That song is a Hank Jones composition, more hard bop in orientation than the rest of the record. It features a paradigmatic solo by Blakey (he can be heard humming along during the solo). The title under which the song was originally released, \"Allison's Uncle\", refers to the fact that the session took place shortly after the wife of Adderley's brother Nat had given birth to a daughter named Allison - thus making Cannonball Adderley \"Allison's Uncle\".\n\n\nCannonball Adderley - Alto saxophone, Leader \nMiles Davis - Trumpet  (not on 5)\nHank Jones - Piano , Sam Jones - Bass \nArt Blakey - Drums \n\nReleased 1958\nRecorded Van Gelder Studio (Hackensack) March 9, 1958\nGenre Hard bop, Bebop\nLength 43:41\nLabel Blue Note Records\nProducer Alfred Lion"
     },
     {
       "id": 19865380,
@@ -1460,6 +1564,65 @@
       },
       "folder_id": 1,
       "community_rating": 4.58,
+      "lastfm_wiki": "Time Out is a studio album by the American jazz group the Dave Brubeck Quartet, released in 1959 on Columbia Records. Recorded at Columbia's 30th Street Studio in New York City, it is based upon the use of time signatures that were unusual for jazz such as 9/8, 6/4 and 5/4. The album is a subtle blend of cool and West Coast jazz.\n\nThe album peaked at No. 2 on the Billboard pop albums chart, and was the first jazz album to sell a million copies. The single \"Take Five\" off the album was also the first jazz single to sell one million copies. By 1963, the record had sold 500,000 units, and in 2011 it was certified double platinum by the RIAA, signifying over two million records sold. The album was inducted in the Grammy Hall of Fame in 2009.\n\nThe album was selected, in 2005, for preservation in the United States National Recording Registry by the Library of Congress as being \"culturally, historically, or aesthetically significant\"."
+    },
+    {
+      "id": 385684,
+      "instance_id": 2196964864,
+      "date_added": "2026-10-23T04:59:57-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 385684,
+        "master_id": 34081,
+        "master_url": "https://api.discogs.com/masters/34081",
+        "resource_url": "https://api.discogs.com/releases/385684",
+        "thumb": "https://i.discogs.com/DJCMRPiMwd27XWnSJZLycrM2Z8_jQAWlE2h1_pvHBlg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4NTY4/NC0xMTA4ODYxMzkx/LmpwZw.jpeg",
+        "cover_image": "https://i.discogs.com/ezAB0FgIHbrcapfBQjOMKid_qvBmlX4dgttlVZyZZiM/rs:fit/g:sm/q:90/h:400/w:400/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4NTY4/NC0xMTA4ODYxMzkx/LmpwZw.jpeg",
+        "title": "Time Out",
+        "year": 1967,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "Santa Maria Press",
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Stereo"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Columbia",
+            "catno": "CS 8192",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 1866,
+            "resource_url": "https://api.discogs.com/labels/1866"
+          }
+        ],
+        "artists": [
+          {
+            "name": "The Dave Brubeck Quartet",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 251689,
+            "resource_url": "https://api.discogs.com/artists/251689"
+          }
+        ],
+        "genres": [
+          "Jazz"
+        ],
+        "styles": [
+          "Cool Jazz"
+        ]
+      },
+      "folder_id": 1,
+      "community_rating": 4.52,
       "lastfm_wiki": "Time Out is a studio album by the American jazz group the Dave Brubeck Quartet, released in 1959 on Columbia Records. Recorded at Columbia's 30th Street Studio in New York City, it is based upon the use of time signatures that were unusual for jazz such as 9/8, 6/4 and 5/4. The album is a subtle blend of cool and West Coast jazz.\n\nThe album peaked at No. 2 on the Billboard pop albums chart, and was the first jazz album to sell a million copies. The single \"Take Five\" off the album was also the first jazz single to sell one million copies. By 1963, the record had sold 500,000 units, and in 2011 it was certified double platinum by the RIAA, signifying over two million records sold. The album was inducted in the Grammy Hall of Fame in 2009.\n\nThe album was selected, in 2005, for preservation in the United States National Recording Registry by the Library of Congress as being \"culturally, historically, or aesthetically significant\"."
     },
     {
@@ -3464,6 +3627,66 @@
       "lastfm_wiki": "Suburban Light is the debut album by The Clientele, released in November 2000. The album is not a proper debut as such because it's a collection of singles released from 1997 through 2000."
     },
     {
+      "id": 35597848,
+      "instance_id": 2196964983,
+      "date_added": "2026-10-23T05:00:31-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 35597848,
+        "master_id": 53572,
+        "master_url": "https://api.discogs.com/masters/53572",
+        "resource_url": "https://api.discogs.com/releases/35597848",
+        "thumb": "https://i.discogs.com/QRHRZUfKLI0tCqOX1ATqVpu4C-jIYxvYIssRM7uRt-o/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM1NTk3/ODQ4LTE3NjI1NTE2/ODAtNjM2MC5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/p3N4Vu5C0vXYTpBU70c-TNeESz_6Qhps3pjycBq7CUU/rs:fit/g:sm/q:90/h:600/w:599/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM1NTk3/ODQ4LTE3NjI1NTE2/ODAtNjM2MC5qcGVn.jpeg",
+        "title": "The Violet Hour",
+        "year": 2025,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Stereo"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Merge Records",
+            "catno": "MRG217",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 7496,
+            "resource_url": "https://api.discogs.com/labels/7496"
+          }
+        ],
+        "artists": [
+          {
+            "name": "The Clientele",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 195721,
+            "resource_url": "https://api.discogs.com/artists/195721"
+          }
+        ],
+        "genres": [
+          "Rock",
+          "Pop"
+        ],
+        "styles": [
+          "Indie Rock",
+          "Indie Pop"
+        ]
+      },
+      "folder_id": 1,
+      "community_rating": 4.93,
+      "lastfm_wiki": null
+    },
+    {
       "id": 7395,
       "instance_id": 2044662168,
       "date_added": "2025-07-25T17:28:02-07:00",
@@ -3897,7 +4120,7 @@
         ]
       },
       "folder_id": 1,
-      "community_rating": 3.89,
+      "community_rating": 3.87,
       "lastfm_wiki": "\"The Bride Stripped Bare\" is the fifth solo studio album by the English rock singer Bryan Ferry. It was released in 1978, shortly before Ferry reconvened his band Roxy Music which had been on hiatus for three years. It was recorded after his girlfriend Jerry Hall left him for Mick Jagger in 1977, and appears to contain references to their break-up. The album peaked at number 13 on the albums chart in the United Kingdom. \n\nThe album's title is taken from the Marcel Duchamp artwork The Bride Stripped Bare by Her Bachelors, Even. Ferry had been introduced to the work as an art school student by Richard Hamilton. A subtext of Duchamp's piece is masculine and feminine relationships. \n\nBryan Ferry – vocals, backing vocals (5, 7), acoustic piano (5), arrangements (8), keyboards (10) \nAnn Odell – electric piano (1), acoustic piano (2, 3), string arrangements (2, 5, 10), organ (7) \nSteve Nye – electric piano (4, 9) \nNeil Hubbard – guitar (1–7, 9, 10) \nWaddy Wachtel – guitar (1, 2, 4, 6, 7, 8, 10), slide guitar (3), backing vocals (3, 5, 7) \nAlan Spenner – bass (1–4, 6, 7, 9) \nHerbie Flowers – string bass (5, 8) \nJohn Wetton – bass guitar (10) \nRick Marotta – drums (1–7, 9) \nPreston Heyman – drums (10) \nMel Collins – saxophone (3, 9) \nMartin Drover – trumpet (3, 9)"
     },
     {
@@ -5621,6 +5844,92 @@
       "lastfm_wiki": null
     },
     {
+      "id": 38650320,
+      "instance_id": 2196965102,
+      "date_added": "2026-10-23T05:01:00-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 38650320,
+        "master_id": 85178,
+        "master_url": "https://api.discogs.com/masters/85178",
+        "resource_url": "https://api.discogs.com/releases/38650320",
+        "thumb": "https://i.discogs.com/VSg_Rs0MqcAL7cfUOMsG79ehONYsB9PxQQM4OFaELo4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4NjUw/MzIwLTE3OTE1Mzk4/MTktMjAwNS5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/57w6UIbNsZmOH5hoSiHDjbBvJpdEwjgUK70uw4idl-Q/rs:fit/g:sm/q:90/h:253/w:250/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4NjUw/MzIwLTE3OTE1Mzk4/MTktMjAwNS5qcGVn.jpeg",
+        "title": "Getz / Gilberto",
+        "year": 2026,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Stereo"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Verve Records",
+            "catno": "00881061004752",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 5041,
+            "resource_url": "https://api.discogs.com/labels/5041"
+          },
+          {
+            "name": "UMe",
+            "catno": "00881061004752",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 68029,
+            "resource_url": "https://api.discogs.com/labels/68029"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Stan Getz",
+            "anv": "",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 30486,
+            "resource_url": "https://api.discogs.com/artists/30486"
+          },
+          {
+            "name": "João Gilberto",
+            "anv": "Joao Gilberto",
+            "join": "Featuring",
+            "role": "",
+            "tracks": "",
+            "id": 346760,
+            "resource_url": "https://api.discogs.com/artists/346760"
+          },
+          {
+            "name": "Antonio Carlos Jobim",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 27991,
+            "resource_url": "https://api.discogs.com/artists/27991"
+          }
+        ],
+        "genres": [
+          "Jazz",
+          "Latin"
+        ],
+        "styles": [
+          "Bossa Nova",
+          "Latin Jazz"
+        ]
+      },
+      "folder_id": 1,
+      "community_rating": 4.58,
+      "lastfm_wiki": null
+    },
+    {
       "id": 1168661,
       "instance_id": 2044664144,
       "date_added": "2025-07-25T17:37:43-07:00",
@@ -5940,5 +6249,5 @@
       "lastfm_wiki": "Tomorrow's Harvest is the fourth studio album from the Scottish electronic music duo Boards of Canada. The album was released on 5 June 2013 in Japan, 10 June 2013 in Europe and 11 June in North America, via Warp Records worldwide."
     }
   ],
-  "lastUpdated": "2026-10-23T03:48:43.032Z"
+  "lastUpdated": "2026-10-24T03:43:15.871Z"
 }
